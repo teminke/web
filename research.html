@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research – Te-Min Ke</title>
+  <!-- 引入 Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVnL2X+3n0yBScCh+6K3Qufa03UT2GQHvHVGzlazkqvWY4QV5gmd2AMHB36PJg0F4Y5tfU4g9W8RV+Plr5pyYg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
   <style>
     html { font-size: 18px; }
     body {
@@ -25,12 +33,21 @@
     nav {
       margin-top: 15px;
     }
+    /* 調整為 inline-flex 以垂直置中 icon + 文字，並顯示手指游標 */
     nav a {
+      display: inline-flex;
+      align-items: center;
       font-size: 1.5rem;
       color: #fff;
       margin: 0 15px;
       font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
+    }
+    /* Icon 與文字間距 */
+    nav a i {
+      margin-right: 8px;
+      font-size: 1.2rem;
     }
     nav a:hover {
       text-decoration: underline;
@@ -73,9 +90,18 @@
   <header>
     <h1>Research Expertise &amp; Web Showcase</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
+      <a href="index.html">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="research.html">
+        <i class="fas fa-flask"></i>
+        Research
+      </a>
+      <a href="publications.html">
+        <i class="fas fa-book"></i>
+        Publications
+      </a>
     </nav>
   </header>
 
@@ -109,5 +135,3 @@
 
 </body>
 </html>
-
-
