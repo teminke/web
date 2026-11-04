@@ -142,6 +142,8 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
   .site-nav { order: 1; margin-left: auto; }
   .header-tools { order: 2; margin-left: 0; }
   .site-nav li.nav-sep { margin-left: 0.5rem; padding-left: 0.5rem; border-left: 2px solid var(--pink-soft); }
+  /* 英文標籤較長，桌機版縮小一點讓整列放得下 / English labels are longer: tighten them on desktop */
+  html[data-lang="en"] .site-nav a { font-size: 0.94rem; padding: 0.42rem 0.38rem; }
 }
 @media (max-width: 1279.98px) {
   .nav-toggle { display: inline-flex; }

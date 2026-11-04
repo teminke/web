@@ -15,9 +15,10 @@
     }).then(function (key) {
       return crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, key, enc.encode(content));
     }).then(function (ct) {
-      var payload = { v: 1, kdf: 'PBKDF2-SHA256', iter: 300000, cipher: 'AES-256-GCM', type: kind, salt: b64(salt), iv: b64(iv), ct: b64(ct) };
+      var payload = { v: 1, kdf: 'PBKDF2-SHA256', iter: 300000, cipher: 'AES-256-GCM', type: kind === 'json' ? 'json' : 'html', salt: b64(salt), iv: b64(iv), ct: b64(ct) };
       var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = kind === 'json' ? 'staging-data.enc.json' : 'staging-atlas.enc.json';
+      var fname = kind === 'json' ? 'staging-data.enc.json' : (kind === 'rt' ? 'content.enc.json' : 'staging-atlas.enc.json');
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = fname;
       document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
     }).catch(function () { err.textContent = '加密失敗 / Encryption failed'; err.hidden = false; });
   });

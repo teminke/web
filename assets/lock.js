@@ -6,8 +6,8 @@
   'use strict';
   var KEY = 'tmk-clinical-pw';
   var I18N = {
-    zh: { title: '此頁需要密碼', hint: '這是個人與同事的臨床工作筆記，輸入密碼後才會在您的瀏覽器中解開。', label: '密碼', btn: '解鎖', remember: '這次瀏覽期間記住密碼', bad: '密碼不對，或檔案無法解開。', loading: '解密中…', nocrypto: '您的瀏覽器不支援所需的加密功能，請改用新版 Chrome、Edge、Safari 或 Firefox。' },
-    en: { title: 'This page needs a password', hint: 'These are clinical working notes for me and my colleagues. They are decrypted in your browser after you enter the password.', label: 'Password', btn: 'Unlock', remember: 'Remember for this browser session', bad: 'Wrong password, or the file could not be decrypted.', loading: 'Decrypting…', nocrypto: 'Your browser lacks the required cryptography support; please use a recent Chrome, Edge, Safari or Firefox.' }
+    zh: { title: '此頁需要密碼', hint: '此內容已加密，輸入密碼後才會在您的瀏覽器中解開。', label: '密碼', btn: '解鎖', remember: '這次瀏覽期間記住密碼', bad: '密碼不對，或檔案無法解開。', loading: '解密中…', nocrypto: '您的瀏覽器不支援所需的加密功能，請改用新版 Chrome、Edge、Safari 或 Firefox。' },
+    en: { title: 'This page needs a password', hint: 'This content is encrypted. It is decrypted in your browser after you enter the password.', label: 'Password', btn: 'Unlock', remember: 'Remember for this browser session', bad: 'Wrong password, or the file could not be decrypted.', loading: 'Decrypting…', nocrypto: 'Your browser lacks the required cryptography support; please use a recent Chrome, Edge, Safari or Firefox.' }
   };
   function lang() { return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'zh'; }
   function t(k) { return I18N[lang()][k]; }
