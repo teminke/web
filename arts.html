@@ -20,7 +20,9 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=LXGW+WenKai+TC:wght@700&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Zhi+Mang+Xing&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/tmk-round-site.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/tmk-round.css">
   <link rel="stylesheet" href="assets/style.css">
   <script>
     /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
@@ -73,6 +75,8 @@
 
   <main id="main" tabindex="-1">
     <section class="page-hero">
+      <span class="doodle doodle-a" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><g fill="#c9a6ea"><circle cx="24" cy="10" r="8"/><circle cx="38" cy="20" r="8"/><circle cx="33" cy="36" r="8"/><circle cx="15" cy="36" r="8"/><circle cx="10" cy="20" r="8"/></g><circle cx="24" cy="24" r="7" fill="#fff"/></svg></span>
+      <span class="doodle doodle-b" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 42 8.5 27A9.5 9.5 0 0 1 22 13.5l2 2 2-2A9.5 9.5 0 0 1 39.5 27z" fill="#f7a8c4"/><path d="M15 21a5 5 0 0 1 5-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>
       <div class="container">
         <p class="eyebrow" data-zh="文藝" data-en="Arts">文藝</p>
         <h1 data-zh="文藝" data-en="Calligraphy &amp; Writing">文藝</h1>
@@ -84,9 +88,9 @@
       <!-- 之後的書法作品與貼文放這裡；每篇可用 <article class="post"> 包起來，文末放分享列。 -->
       <div class="share" data-share-url="https://teminke.github.io/web/arts.html">
         <span class="share-label"><span data-zh="分享這一頁" data-en="Share this page">分享這一頁</span></span>
-        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fteminke.github.io%2Fweb%2Farts.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Facebook<span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a>
-        <a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fteminke.github.io%2Fweb%2Farts.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>LINE<span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a>
-        <button type="button" class="share-btn share-copy" data-done-zh="已複製！" data-done-en="Copied!" data-label-zh="複製連結" data-label-en="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><span class="share-copy-text" data-zh="複製連結" data-en="Copy link">複製連結</span></button>
+        <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fteminke.github.io%2Fweb%2Farts.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Facebook<span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a>
+        <a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fteminke.github.io%2Fweb%2Farts.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>LINE<span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a>
+        <button type="button" class="share-btn share-copy" data-done-zh="已複製！" data-done-en="Copied!" data-label-zh="複製連結" data-label-en="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg><span class="share-copy-text" data-zh="複製連結" data-en="Copy link">複製連結</span></button>
       </div>
     </div>
 
