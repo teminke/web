@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-zh="癌症分期計算機 – 柯德敏 Te-Min Ke" data-en="Cancer Staging Calculator – Te-Min Ke">癌症分期計算機 – 柯德敏 Te-Min Ke</title>
+  <meta name="description" content="可點選的癌症分期計算機：依癌別點選 T、N、M 即得分期，附定義與筆記。" data-zh="可點選的癌症分期計算機：依癌別點選 T、N、M 即得分期，附定義與筆記。" data-en="Clickable cancer staging calculator: pick T, N and M per site to get the stage group, with definitions and notes." data-i18n-attr="content">
+  <meta name="author" content="柯德敏 Te-Min Ke">
+  <meta name="theme-color" content="#fff6fa">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="柯德敏 Te-Min Ke">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="https://teminke.github.io/web/clinical/staging.html">
+  <meta property="og:title" content="癌症分期計算機 – 柯德敏 Te-Min Ke | Cancer Staging Calculator – Te-Min Ke">
+  <meta property="og:description" content="可點選的癌症分期計算機：依癌別點選 T、N、M 即得分期，附定義與筆記。">
+  <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,900&amp;family=Zhi+Mang+Xing&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/tmk-round-site.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/fonts/tmk-round.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
+    (function () {
+      try {
+        var l = localStorage.getItem('tmk-site-lang');
+        if (l !== 'zh' && l !== 'en') {
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          l = /^zh/i.test(n) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到主要內容" data-en="Skip to main content">跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="brand-mark" src="../assets/favicon.svg" width="34" height="34" alt="">
+        <span>柯德敏 <span class="brand-en">Te-Min Ke</span></span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="lang-toggle" aria-label="切換語言 / Switch language">
+          <span class="lang-opt lang-zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟或關閉主選單" data-zh="開啟或關閉主選單" data-en="Open or close main menu" data-i18n-attr="aria-label">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主選單" data-zh="主選單" data-en="Main navigation" data-i18n-attr="aria-label">
+        <ul>
+        <li><a href="../index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+        <li><a href="../about.html" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="../research.html" data-zh="研究" data-en="Research">研究</a></li>
+        <li><a href="../publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+        <li><a href="../awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+        <li><a href="../education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+        <li><a href="../teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+        <li><a href="../clinical/index.html" aria-current="page" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+        <li><a href="../arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+        <li><a href="../contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        <li class="nav-sep"><a href="../faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <span class="doodle doodle-a" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><g fill="#c9a6ea"><circle cx="24" cy="10" r="8"/><circle cx="38" cy="20" r="8"/><circle cx="33" cy="36" r="8"/><circle cx="15" cy="36" r="8"/><circle cx="10" cy="20" r="8"/></g><circle cx="24" cy="24" r="7" fill="#fff"/></svg></span>
+      <span class="doodle doodle-b" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 42 8.5 27A9.5 9.5 0 0 1 22 13.5l2 2 2-2A9.5 9.5 0 0 1 39.5 27z" fill="#f7a8c4"/><path d="M15 21a5 5 0 0 1 5-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>
+      <div class="container">
+        <p class="eyebrow" data-zh="臨床參考" data-en="Clinical">臨床參考</p>
+        <h1 data-zh="癌症分期計算機" data-en="Cancer Staging Calculator">癌症分期計算機</h1>
+        <p class="lead" data-zh="先選癌別，再點矩陣裡的 T 列與 N 欄（或直接點格子），分期馬上出現；下方同時列出該癌別的 T／N／M 定義與筆記。" data-en="Choose a cancer site, then click a T row and an N column in the matrix (or a cell) to see the stage group; the T/N/M definitions and notes for that site are listed below.">先選癌別，再點矩陣裡的 T 列與 N 欄（或直接點格子），分期馬上出現；下方同時列出該癌別的 T／N／M 定義與筆記。</p>
+      </div>
+    </section>
+
+    <div class="container page-body">
+      <div id="staging-app" class="staging-app"><p class="st-hint"><span data-zh="載入中…（需要啟用 JavaScript）" data-en="Loading… (JavaScript required)">載入中…（需要啟用 JavaScript）</span></p></div>
+      <p><a href="index.html"><span data-zh="← 回臨床工作參考資料" data-en="← Back to Clinical Reference">← 回臨床工作參考資料</span></a></p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name"><strong>柯德敏 Te-Min Ke</strong>, MD, MPH, PhD</p>
+        <p><span data-zh="奇美醫院 放射腫瘤部" data-en="Department of Radiation Oncology, Chimei Medical Center, Tainan, Taiwan">奇美醫院 放射腫瘤部</span> · <a href="mailto:fwf2001@gmail.com">fwf2001@gmail.com</a></p>
+        <p>© <span data-year>2026</span> 柯德敏 Te-Min Ke. <span data-zh="版權所有。" data-en="All rights reserved.">版權所有。</span></p>
+      </div>
+      <nav aria-label="頁尾連結" data-zh="頁尾連結" data-en="Footer links" data-i18n-attr="aria-label">
+        <ul class="footer-links">
+          <li><a href="../index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+          <li><a href="../about.html" data-zh="關於" data-en="About">關於</a></li>
+          <li><a href="../research.html" data-zh="研究" data-en="Research">研究</a></li>
+          <li><a href="../publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+          <li><a href="../awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+          <li><a href="../education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+          <li><a href="../teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+          <li><a href="../clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+          <li><a href="../arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+          <li><a href="../contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+          <li><a href="../faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/i18n.js"></script>
+  <script src="../assets/site.js"></script>
+  <script src="../assets/staging-data.js"></script>
+  <script src="../assets/staging.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-zh="臨床工作參考資料 – 柯德敏 Te-Min Ke" data-en="Clinical Reference – Te-Min Ke">臨床工作參考資料 – 柯德敏 Te-Min Ke</title>
+  <meta name="description" content="臨床工作用的工具與筆記：RO Toolbox、癌症分期計算機、分期速記大圖冊。" data-zh="臨床工作用的工具與筆記：RO Toolbox、癌症分期計算機、分期速記大圖冊。" data-en="Tools and notes for clinical work: RO Toolbox, a cancer staging calculator and a staging atlas." data-i18n-attr="content">
+  <meta name="author" content="柯德敏 Te-Min Ke">
+  <meta name="theme-color" content="#fff6fa">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="柯德敏 Te-Min Ke">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="https://teminke.github.io/web/clinical/index.html">
+  <meta property="og:title" content="臨床工作參考資料 – 柯德敏 Te-Min Ke | Clinical Reference – Te-Min Ke">
+  <meta property="og:description" content="臨床工作用的工具與筆記：RO Toolbox、癌症分期計算機、分期速記大圖冊。">
+  <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,900&amp;family=Zhi+Mang+Xing&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/tmk-round-site.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/fonts/tmk-round.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
+    (function () {
+      try {
+        var l = localStorage.getItem('tmk-site-lang');
+        if (l !== 'zh' && l !== 'en') {
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          l = /^zh/i.test(n) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-zh="跳到主要內容" data-en="Skip to main content">跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <img class="brand-mark" src="../assets/favicon.svg" width="34" height="34" alt="">
+        <span>柯德敏 <span class="brand-en">Te-Min Ke</span></span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="lang-toggle" aria-label="切換語言 / Switch language">
+          <span class="lang-opt lang-zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟或關閉主選單" data-zh="開啟或關閉主選單" data-en="Open or close main menu" data-i18n-attr="aria-label">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主選單" data-zh="主選單" data-en="Main navigation" data-i18n-attr="aria-label">
+        <ul>
+        <li><a href="../index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+        <li><a href="../about.html" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="../research.html" data-zh="研究" data-en="Research">研究</a></li>
+        <li><a href="../publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+        <li><a href="../awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+        <li><a href="../education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+        <li><a href="../teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+        <li><a href="../clinical/index.html" aria-current="page" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+        <li><a href="../arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+        <li><a href="../contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        <li class="nav-sep"><a href="../faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <span class="doodle doodle-a" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><g fill="#c9a6ea"><circle cx="24" cy="10" r="8"/><circle cx="38" cy="20" r="8"/><circle cx="33" cy="36" r="8"/><circle cx="15" cy="36" r="8"/><circle cx="10" cy="20" r="8"/></g><circle cx="24" cy="24" r="7" fill="#fff"/></svg></span>
+      <span class="doodle doodle-b" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 42 8.5 27A9.5 9.5 0 0 1 22 13.5l2 2 2-2A9.5 9.5 0 0 1 39.5 27z" fill="#f7a8c4"/><path d="M15 21a5 5 0 0 1 5-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>
+      <div class="container">
+        <p class="eyebrow" data-zh="臨床參考" data-en="Clinical">臨床參考</p>
+        <h1 data-zh="臨床工作參考資料" data-en="Clinical Reference">臨床工作參考資料</h1>
+        <p class="lead" data-zh="給自己與同事在臨床工作時快速查閱的工具與筆記；非病人衛教內容。" data-en="Tools and notes for quick reference at work, for myself and colleagues. Not patient education.">給自己與同事在臨床工作時快速查閱的工具與筆記；非病人衛教內容。</p>
+      </div>
+    </section>
+
+    <div class="container page-body">
+      <section class="block">
+        <h2 data-zh="工具與連結" data-en="Tools and links">工具與連結</h2>
+        <div class="card-grid">
+          <a class="card card-link tool-card" href="https://rotoolbox.org/" target="_blank" rel="noopener">
+            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg></span>
+            <h3 data-zh="RO Toolbox" data-en="RO Toolbox">RO Toolbox</h3>
+            <p data-zh="放射腫瘤線上工具箱（外部網站，新分頁開啟）。" data-en="Online radiation oncology toolbox (external site, opens in a new tab).">放射腫瘤線上工具箱（外部網站，新分頁開啟）。</p>
+            <span class="card-more ext">rotoolbox.org <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg></span>
+          </a>
+          <a class="card card-link tool-card" href="staging.html">
+            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l5-5 4 4 6-7"/><path d="M14 9h4v4"/></svg></span>
+            <h3 data-zh="癌症分期計算機" data-en="Cancer staging calculator">癌症分期計算機</h3>
+            <p data-zh="選癌別、點 T 與 N，立刻得到分期；附各癌別的 T／N／M 定義與筆記提示。" data-en="Pick a site, click T and N, and get the stage group at once, with T/N/M definitions and notes for each site.">選癌別、點 T 與 N，立刻得到分期；附各癌別的 T／N／M 定義與筆記提示。</p>
+            <span class="card-more" data-zh="開啟計算機 →" data-en="Open the calculator →">開啟計算機 →</span>
+          </a>
+          <a class="card card-link tool-card" href="staging-atlas.html" target="_blank" rel="noopener">
+            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg></span>
+            <h3 data-zh="癌症分期速記大圖冊" data-en="Staging quick-reference atlas">癌症分期速記大圖冊</h3>
+            <p data-zh="原始筆記全文（含圖），新分頁開啟。" data-en="The full original notes with figures, opens in a new tab.">原始筆記全文（含圖），新分頁開啟。</p>
+            <span class="card-more ext"><span data-zh="打開筆記" data-en="Open the atlas">打開筆記</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg></span>
+          </a>
+        </div>
+      </section>
+      <div class="notice">
+        <p><span data-zh="本區內容為個人整理的工作筆記，分期與治療決策請以 AJCC／NCCN 等原始指引為準。" data-en="Content here is personal working notes; base staging and treatment decisions on the original AJCC/NCCN guidance.">本區內容為個人整理的工作筆記，分期與治療決策請以 AJCC／NCCN 等原始指引為準。</span></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name"><strong>柯德敏 Te-Min Ke</strong>, MD, MPH, PhD</p>
+        <p><span data-zh="奇美醫院 放射腫瘤部" data-en="Department of Radiation Oncology, Chimei Medical Center, Tainan, Taiwan">奇美醫院 放射腫瘤部</span> · <a href="mailto:fwf2001@gmail.com">fwf2001@gmail.com</a></p>
+        <p>© <span data-year>2026</span> 柯德敏 Te-Min Ke. <span data-zh="版權所有。" data-en="All rights reserved.">版權所有。</span></p>
+      </div>
+      <nav aria-label="頁尾連結" data-zh="頁尾連結" data-en="Footer links" data-i18n-attr="aria-label">
+        <ul class="footer-links">
+          <li><a href="../index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+          <li><a href="../about.html" data-zh="關於" data-en="About">關於</a></li>
+          <li><a href="../research.html" data-zh="研究" data-en="Research">研究</a></li>
+          <li><a href="../publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+          <li><a href="../awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+          <li><a href="../education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+          <li><a href="../teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+          <li><a href="../clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+          <li><a href="../arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+          <li><a href="../contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+          <li><a href="../faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/i18n.js"></script>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
