@@ -166,7 +166,7 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .hero-name { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; margin: 0 0 0.9rem; font-size: 1rem; }
 .hero-name .name-en { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 900; font-size: clamp(3rem, 2rem + 4vw, 5.2rem); line-height: 1.05; color: #2a1838; letter-spacing: -0.01em; }
 .hero-name .name-zh { font-family: var(--font-brush); font-weight: 400; font-synthesis: none; font-size: clamp(2.4rem, 1.7rem + 2.6vw, 3.6rem); letter-spacing: 0.06em; line-height: 1.1; color: #2a1838; }
-.hero-name .name-zh img { height: clamp(3rem, 2rem + 3.2vw, 4.4rem); width: auto; display: block; }
+.hero-name .name-zh img { height: clamp(3.2rem, 2.2rem + 3.4vw, 4.8rem); width: auto; display: block; margin-top: 0.25rem; }
 .hero-degrees { margin: 0 0 0.9rem; }
 .hero-degrees .chip { font-size: 0.95rem; padding: 0.3rem 0.95rem; font-weight: 800; letter-spacing: 0.03em; }
 .hero-role { color: var(--plum); font-weight: 700; margin: 0 0 1rem; }
