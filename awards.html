@@ -1,134 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Awards – Te-Min Ke</title>
-  <style>
-    html { font-size: 18px; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: #68217A;
-      color: white;
-      padding: 40px 10px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 15px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1000px;
-      margin: -20px auto 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      font-size: 2rem;
-      color: #68217A;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
-    ul {
-      line-height: 1.8;
-      font-size: 1rem;
-      margin: 0;
-      padding: 0 0 0 20px;
-    }
-    ul li {
-      margin-bottom: 1rem;
-    }
-    .zh {
-      font-weight: bold;
-    }
-  </style>
+  <title data-zh="獲獎紀錄 – 柯德敏 Te-Min Ke" data-en="Awards – Te-Min Ke">獲獎紀錄 – 柯德敏 Te-Min Ke</title>
+  <meta name="description" content="柯德敏醫師歷年獲得的獎項與榮譽。" data-zh="柯德敏醫師歷年獲得的獎項與榮譽。" data-en="Honors and awards received by Dr. Te-Min Ke." data-i18n-attr="content">
+  <meta name="author" content="柯德敏 Te-Min Ke">
+  <meta name="theme-color" content="#faf6ef">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="獲獎紀錄 – 柯德敏 Te-Min Ke | Awards – Te-Min Ke">
+  <meta property="og:image" content="https://teminke.github.io/web/profile.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
+    (function () {
+      try {
+        var l = localStorage.getItem('tmk-site-lang');
+        if (l !== 'zh' && l !== 'en') {
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          l = /^zh/i.test(n) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-zh="跳到主要內容" data-en="Skip to main content">跳到主要內容</a>
 
-  <header>
-    <h1>Honors &amp; Awards</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="awards.html">Awards</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/favicon.svg" width="34" height="34" alt="">
+        <span>柯德敏 <span class="brand-en">Te-Min Ke</span></span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="lang-toggle" aria-label="切換語言 / Switch language">
+          <span class="lang-opt lang-zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟或關閉主選單" data-zh="開啟或關閉主選單" data-en="Open or close main menu" data-i18n-attr="aria-label">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主選單" data-zh="主選單" data-en="Main navigation" data-i18n-attr="aria-label">
+        <ul>
+        <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+        <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="research.html" data-zh="研究" data-en="Research">研究</a></li>
+        <li><a href="publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+        <li><a href="awards.html" aria-current="page" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+        <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+        <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+        <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+        <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        <li class="nav-sep"><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Honors &amp; Awards</h2>
-    <ul>
-      <li><strong>01/2026</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良論文</span><br>
-        Outstanding Research Paper Award, Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>12/2025</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良教師</span><br>
-        Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>05/2025</strong><br>
-        <span class="zh" lang="zh-Hant">TJCC 第 29 屆台灣癌症聯合年會 論文臨床組特優（第一名）</span><br>
-        Top Award (First Place), Clinical Category, Paper Competition, The 29th Taiwan Joint Cancer Conference (TJCC), Taiwan
-      </li>
-      <li><strong>03/2023</strong><br>
-        <span class="zh" lang="zh-Hant">英國曼徹斯特大學 最佳海報獎</span><br>
-        Best Poster Presentation Prize Winner, The University of Manchester, UK
-      </li>
-      <li><strong>06/2020</strong><br>
-        <span class="zh" lang="zh-Hant">公務人員考績甲等</span><br>
-        Grade A, Annual Civil Service Performance Evaluation, Taiwan
-      </li>
-      <li><strong>01/2020</strong><br>
-        <span class="zh" lang="zh-Hant">教育部公費留學特考 醫藥衛生類獎學金</span><br>
-        Government Scholarship to Study Abroad (Medicine and Health Category), Ministry of Education, Taiwan
-      </li>
-      <li><strong>09/2019</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良教師</span><br>
-        Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>08/2019</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良住院醫生第一名</span><br>
-        Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>08/2019</strong><br>
-        <span class="zh" lang="zh-Hant">日本北海道大學 GI-CoRE Medical Science and Engineering Symposium 最佳海報獎</span><br>
-        Best Poster Award, The GI-CoRE Medical Science and Engineering Symposium, Hokkaido University, Japan
-      </li>
-      <li><strong>08/2018</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良住院醫生第一名</span><br>
-        Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>06/2017</strong><br>
-        <span class="zh" lang="zh-Hant">奇美醫院優良實習醫生</span><br>
-        Best Intern Award, Chimei Medical Center, Tainan, Taiwan
-      </li>
-      <li><strong>01/2015</strong><br>
-        <span class="zh" lang="zh-Hant">輔仁大學書卷獎</span><br>
-        Academic Excellence Award, Fu Jen Catholic University, Taiwan
-      </li>
-    </ul>
-  </div>
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-zh="獲獎" data-en="Awards">獲獎</p>
+        <h1 data-zh="獲獎紀錄" data-en="Honors &amp; Awards">獲獎紀錄</h1>
+        <p class="lead" data-zh="歷年獲得的獎項與榮譽，依時間由近到遠排列。" data-en="Honors and awards received over the years, most recent first.">歷年獲得的獎項與榮譽，依時間由近到遠排列。</p>
+      </div>
+    </section>
 
+    <div class="container page-body">
+      <section class="block">
+        <h2 data-zh="獲獎與榮譽" data-en="Honors &amp; Awards">獲獎與榮譽</h2>
+        <ul class="award-list">
+        <li class="award">
+          <div class="award-date">01/2026</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良論文" data-en="Outstanding Research Paper Award, Chimei Medical Center, Tainan, Taiwan">奇美醫院優良論文</h3>
+            <p class="award-sub" data-zh="Outstanding Research Paper Award, Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良論文">Outstanding Research Paper Award, Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">12/2025</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良教師" data-en="Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan">奇美醫院優良教師</h3>
+            <p class="award-sub" data-zh="Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良教師">Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">05/2025</div>
+          <div>
+            <h3 class="award-title" data-zh="TJCC 第 29 屆台灣癌症聯合年會 論文臨床組特優（第一名）" data-en="Top Award (First Place), Clinical Category, Paper Competition, The 29th Taiwan Joint Cancer Conference (TJCC), Taiwan">TJCC 第 29 屆台灣癌症聯合年會 論文臨床組特優（第一名）</h3>
+            <p class="award-sub" data-zh="Top Award (First Place), Clinical Category, Paper Competition, The 29th Taiwan Joint Cancer Conference (TJCC), Taiwan" data-en="TJCC 第 29 屆台灣癌症聯合年會 論文臨床組特優（第一名）">Top Award (First Place), Clinical Category, Paper Competition, The 29th Taiwan Joint Cancer Conference (TJCC), Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">03/2023</div>
+          <div>
+            <h3 class="award-title" data-zh="英國曼徹斯特大學 最佳海報獎" data-en="Best Poster Presentation Prize Winner, The University of Manchester, UK">英國曼徹斯特大學 最佳海報獎</h3>
+            <p class="award-sub" data-zh="Best Poster Presentation Prize Winner, The University of Manchester, UK" data-en="英國曼徹斯特大學 最佳海報獎">Best Poster Presentation Prize Winner, The University of Manchester, UK</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">06/2020</div>
+          <div>
+            <h3 class="award-title" data-zh="公務人員考績甲等" data-en="Grade A, Annual Civil Service Performance Evaluation, Taiwan">公務人員考績甲等</h3>
+            <p class="award-sub" data-zh="Grade A, Annual Civil Service Performance Evaluation, Taiwan" data-en="公務人員考績甲等">Grade A, Annual Civil Service Performance Evaluation, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">01/2020</div>
+          <div>
+            <h3 class="award-title" data-zh="教育部公費留學特考 醫藥衛生類獎學金" data-en="Government Scholarship to Study Abroad (Medicine and Health Category), Ministry of Education, Taiwan">教育部公費留學特考 醫藥衛生類獎學金</h3>
+            <p class="award-sub" data-zh="Government Scholarship to Study Abroad (Medicine and Health Category), Ministry of Education, Taiwan" data-en="教育部公費留學特考 醫藥衛生類獎學金">Government Scholarship to Study Abroad (Medicine and Health Category), Ministry of Education, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">09/2019</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良教師" data-en="Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan">奇美醫院優良教師</h3>
+            <p class="award-sub" data-zh="Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良教師">Outstanding Teacher Award, Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">08/2019</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良住院醫生第一名" data-en="Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan">奇美醫院優良住院醫生第一名</h3>
+            <p class="award-sub" data-zh="Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良住院醫生第一名">Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">08/2019</div>
+          <div>
+            <h3 class="award-title" data-zh="日本北海道大學 GI-CoRE Medical Science and Engineering Symposium 最佳海報獎" data-en="Best Poster Award, The GI-CoRE Medical Science and Engineering Symposium, Hokkaido University, Japan">日本北海道大學 GI-CoRE Medical Science and Engineering Symposium 最佳海報獎</h3>
+            <p class="award-sub" data-zh="Best Poster Award, The GI-CoRE Medical Science and Engineering Symposium, Hokkaido University, Japan" data-en="日本北海道大學 GI-CoRE Medical Science and Engineering Symposium 最佳海報獎">Best Poster Award, The GI-CoRE Medical Science and Engineering Symposium, Hokkaido University, Japan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">08/2018</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良住院醫生第一名" data-en="Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan">奇美醫院優良住院醫生第一名</h3>
+            <p class="award-sub" data-zh="Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良住院醫生第一名">Best Resident Physician Award (First Place), Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">06/2017</div>
+          <div>
+            <h3 class="award-title" data-zh="奇美醫院優良實習醫生" data-en="Best Intern Award, Chimei Medical Center, Tainan, Taiwan">奇美醫院優良實習醫生</h3>
+            <p class="award-sub" data-zh="Best Intern Award, Chimei Medical Center, Tainan, Taiwan" data-en="奇美醫院優良實習醫生">Best Intern Award, Chimei Medical Center, Tainan, Taiwan</p>
+          </div>
+        </li>
+        <li class="award">
+          <div class="award-date">01/2015</div>
+          <div>
+            <h3 class="award-title" data-zh="輔仁大學書卷獎" data-en="Academic Excellence Award, Fu Jen Catholic University, Taiwan">輔仁大學書卷獎</h3>
+            <p class="award-sub" data-zh="Academic Excellence Award, Fu Jen Catholic University, Taiwan" data-en="輔仁大學書卷獎">Academic Excellence Award, Fu Jen Catholic University, Taiwan</p>
+          </div>
+        </li>
+        </ul>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name"><strong>柯德敏 Te-Min Ke</strong>, MD, MPH, PhD</p>
+        <p><span data-zh="奇美醫院 放射腫瘤科" data-en="Department of Radiation Oncology, Chimei Medical Center, Tainan, Taiwan">奇美醫院 放射腫瘤科</span> · <a href="mailto:fwf2001@gmail.com">fwf2001@gmail.com</a></p>
+        <p>© <span data-year>2026</span> 柯德敏 Te-Min Ke. <span data-zh="版權所有。" data-en="All rights reserved.">版權所有。</span></p>
+      </div>
+      <nav aria-label="頁尾連結" data-zh="頁尾連結" data-en="Footer links" data-i18n-attr="aria-label">
+        <ul class="footer-links">
+          <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+          <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+          <li><a href="research.html" data-zh="研究" data-en="Research">研究</a></li>
+          <li><a href="publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+          <li><a href="awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+          <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+          <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+          <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+          <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+          <li><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>

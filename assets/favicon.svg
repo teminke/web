@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Te-Min Ke">
+  <circle cx="32" cy="32" r="30" fill="#94552a"/>
+  <circle cx="32" cy="32" r="24" fill="#faf6ef"/>
+  <path d="M32 48V30" stroke="#557a5d" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <path d="M32 31c0-8.5 6.5-13 15-13 0 8.5-6.5 13-15 13z" fill="#557a5d"/>
+  <path d="M32 39c0-6-4.5-9.5-11-9.5 0 6 4.5 9.5 11 9.5z" fill="#94552a"/>
+</svg>
