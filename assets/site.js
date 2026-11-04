@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var DESKTOP = window.matchMedia('(min-width: 1100px)');
+  var DESKTOP = window.matchMedia('(min-width: 1280px)');
 
   function initNav() {
     var toggle = document.querySelector('.nav-toggle');
