@@ -83,10 +83,52 @@
     }
   }
 
+  function initChecklists() {
+    var lists = document.querySelectorAll('.checklist[data-key]');
+    var today = new Date().toISOString().slice(0, 10);
+    for (var i = 0; i < lists.length; i++) {
+      (function (list) {
+        var key = 'tmk-check-' + list.getAttribute('data-key') + '-' + today;
+        var boxes = list.querySelectorAll('input[type="checkbox"]');
+        var bar = list.querySelector('.bar');
+        var done = list.querySelector('.done');
+        var reset = list.querySelector('.reset');
+        function load() {
+          var saved = [];
+          try { saved = JSON.parse(window.localStorage.getItem(key) || '[]'); } catch (e) { saved = []; }
+          for (var j = 0; j < boxes.length; j++) { boxes[j].checked = saved.indexOf(j) !== -1; }
+        }
+        function save() {
+          var arr = [];
+          for (var j = 0; j < boxes.length; j++) { if (boxes[j].checked) { arr.push(j); } }
+          try { window.localStorage.setItem(key, JSON.stringify(arr)); } catch (e) { /* ignore */ }
+          return arr.length;
+        }
+        function render() {
+          var n = 0;
+          for (var j = 0; j < boxes.length; j++) { if (boxes[j].checked) { n++; } }
+          if (bar) { bar.style.width = (boxes.length ? Math.round(n * 100 / boxes.length) : 0) + '%'; }
+          if (done) { done.textContent = String(n); }
+        }
+        for (var j = 0; j < boxes.length; j++) {
+          boxes[j].addEventListener('change', function () { save(); render(); });
+        }
+        if (reset) {
+          reset.addEventListener('click', function () {
+            for (var k = 0; k < boxes.length; k++) { boxes[k].checked = false; }
+            save(); render();
+          });
+        }
+        load(); render();
+      })(lists[i]);
+    }
+  }
+
   function init() {
     initNav();
     initYear();
     initShare();
+    initChecklists();
   }
 
   if (document.readyState === 'loading') {
