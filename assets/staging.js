@@ -2,7 +2,7 @@
    staging.js — 癌症分期計算機 / Cancer staging calculator
    資料來源：assets/staging-data.js（由個人筆記整理）。純前端，無相依套件。
    ===================================================================== */
-(function () {
+window.initStagingApp = function () {
   'use strict';
   var D = window.STAGING_DATA;
   if (!D) { return; }
@@ -370,4 +370,5 @@
   var initial = (location.hash || '').replace('#', '');
   if (initial && siteById(initial)) { state.site = siteById(initial); }
   render();
-})();
+};
+if (window.STAGING_DATA) { window.initStagingApp(); }

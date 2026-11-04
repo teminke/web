@@ -76,8 +76,6 @@
 
   <main id="main" tabindex="-1">
     <section class="page-hero">
-      <span class="doodle doodle-a" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><g fill="#c9a6ea"><circle cx="24" cy="10" r="8"/><circle cx="38" cy="20" r="8"/><circle cx="33" cy="36" r="8"/><circle cx="15" cy="36" r="8"/><circle cx="10" cy="20" r="8"/></g><circle cx="24" cy="24" r="7" fill="#fff"/></svg></span>
-      <span class="doodle doodle-b" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 42 8.5 27A9.5 9.5 0 0 1 22 13.5l2 2 2-2A9.5 9.5 0 0 1 39.5 27z" fill="#f7a8c4"/><path d="M15 21a5 5 0 0 1 5-4" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></span>
       <div class="container">
         <p class="eyebrow" data-zh="臨床參考" data-en="Clinical">臨床參考</p>
         <h1 data-zh="癌症分期計算機" data-en="Cancer Staging Calculator">癌症分期計算機</h1>
@@ -86,7 +84,8 @@
     </section>
 
     <div class="container page-body">
-      <div id="staging-app" class="staging-app"><p class="st-hint"><span data-zh="載入中…（需要啟用 JavaScript）" data-en="Loading… (JavaScript required)">載入中…（需要啟用 JavaScript）</span></p></div>
+      <div id="staging-lock"><p class="st-hint"><span data-zh="載入中…（需要啟用 JavaScript）" data-en="Loading… (JavaScript required)">載入中…（需要啟用 JavaScript）</span></p></div>
+      <div id="staging-app" class="staging-app"></div>
       <p><a href="index.html"><span data-zh="← 回臨床工作參考資料" data-en="← Back to Clinical Reference">← 回臨床工作參考資料</span></a></p>
     </div>
 
@@ -119,7 +118,14 @@
 
   <script src="../assets/i18n.js"></script>
   <script src="../assets/site.js"></script>
-  <script src="../assets/staging-data.js"></script>
+  <script src="../assets/lock.js"></script>
   <script src="../assets/staging.js"></script>
+  <script>
+    TMKLock.mount(document.getElementById("staging-lock"), "../assets/staging-data.enc.json", function (text) {
+      window.STAGING_DATA = JSON.parse(text);
+      document.getElementById("staging-lock").hidden = true;
+      window.initStagingApp();
+    });
+  </script>
 </body>
 </html>

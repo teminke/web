@@ -166,7 +166,7 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .hero-name { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; margin: 0 0 0.9rem; font-size: 1rem; }
 .hero-name .name-en { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 900; font-size: clamp(2.1rem, 1.5rem + 2.2vw, 3.3rem); line-height: 1.1; color: #2a1838; letter-spacing: -0.01em; }
 .hero-name .name-zh { font-family: var(--font-brush); font-weight: 400; font-synthesis: none; font-size: clamp(2.4rem, 1.7rem + 2.6vw, 3.6rem); letter-spacing: 0.06em; line-height: 1.1; color: #2a1838; }
-.hero-name .name-zh img { height: clamp(4.6rem, 3rem + 4.6vw, 7.2rem); width: auto; display: block; margin-top: 0.3rem; }
+.hero-name .name-zh img { height: clamp(6rem, 3.4rem + 6.4vw, 9.6rem); width: auto; display: block; margin-top: 0.3rem; }
 .hero-degrees { margin: 0 0 0.9rem; }
 .hero-degrees .chip { font-size: 0.95rem; padding: 0.3rem 0.95rem; font-weight: 800; letter-spacing: 0.03em; }
 .hero-role { color: var(--plum); font-weight: 700; margin: 0 0 1rem; }
@@ -184,11 +184,6 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
   background: var(--mint-soft); bottom: 0.2rem; z-index: 0;
 }
 .hero-photo img { position: relative; z-index: 1; height: clamp(300px, 36vw, 440px); width: auto; filter: drop-shadow(0 14px 18px rgba(102, 0, 153, 0.18)); }
-.sparkle { position: absolute; z-index: 2; width: 22px; height: 22px; color: var(--butter); animation: twinkle 2.4s ease-in-out infinite; }
-.sparkle.s1 { top: 4%; left: 8%; color: var(--pink); }
-.sparkle.s2 { top: 14%; right: 4%; width: 16px; height: 16px; animation-delay: 0.8s; }
-.sparkle.s3 { bottom: 22%; left: 2%; width: 14px; height: 14px; color: var(--lav); animation-delay: 1.5s; }
-@keyframes twinkle { 0%, 100% { opacity: 0.35; transform: scale(0.8) rotate(0deg); } 50% { opacity: 1; transform: scale(1.1) rotate(15deg); } }
 .wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 46px; color: var(--bg); display: block; }
 
 @media (max-width: 760px) {
@@ -424,7 +419,7 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 @media print {
-  .site-header, .skip-link, .hero-actions, .nav-toggle, .lang-toggle, .footer-links, .sparkle, .wave { display: none !important; }
+  .site-header, .skip-link, .hero-actions, .nav-toggle, .lang-toggle, .footer-links, .wave { display: none !important; }
   body { background: #fff; color: #000; }
   .card, .pub, .tl-item, .award, .topic, .tile { box-shadow: none; break-inside: avoid; }
   a { color: inherit; }
@@ -442,26 +437,10 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .share-copy { background: var(--butter-soft); border-color: #ffe5a3; }
 .share-copy.is-done { background: var(--mint-soft); border-color: #bfeedb; }
 
-/* ---------- 手繪小點綴 / Doodles ---------- */
-.doodle { position: absolute; pointer-events: none; z-index: 0; animation: floaty 6s ease-in-out infinite; }
-.doodle svg { width: 100%; height: 100%; display: block; }
-.hero .doodle-1 { width: 66px; height: 66px; left: 3%; top: 10%; }
-.hero .doodle-2 { width: 40px; height: 40px; left: 46%; top: 12%; animation-delay: 1.2s; }
-.hero .doodle-3 { width: 150px; height: 70px; right: 28%; bottom: 12%; animation-delay: 2s; opacity: 0.9; }
-.hero .doodle-4 { width: 30px; height: 30px; left: 9%; bottom: 20%; animation-delay: 3s; }
-.hero .doodle-5 { width: 48px; height: 48px; right: 3%; top: 44%; animation-delay: 0.6s; }
+/* ---------- 區塊定位 / Section positioning ---------- */
 .section-personal { position: relative; overflow: hidden; }
-.section-personal .doodle-a { width: 54px; height: 54px; right: 4%; top: 10%; }
-.section-personal .doodle-b { width: 36px; height: 36px; left: 3%; bottom: 10%; animation-delay: 1.5s; }
 .page-hero { position: relative; overflow: hidden; }
-.page-hero .doodle-a { width: 56px; height: 56px; right: 4%; top: 14%; }
-.page-hero .doodle-b { width: 30px; height: 30px; right: 12%; bottom: 14%; animation-delay: 1.8s; }
 .page-hero .container { position: relative; z-index: 1; }
-@keyframes floaty { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(4deg); } }
-@media (max-width: 760px) {
-  .hero .doodle-2, .hero .doodle-5, .page-hero .doodle-b { display: none; }
-  .hero .doodle-3 { right: 10%; }
-}
 
 /* ---------- 衛教文章元件 / Patient-education components ---------- */
 .notice.draft { background: var(--butter-soft); border-color: var(--butter); color: var(--butter-deep); box-shadow: 4px 4px 0 var(--pink-soft); }
@@ -767,3 +746,21 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .st-tip p { margin: 0; white-space: pre-line; }
 .st-source { color: var(--muted); font-size: 0.85rem; margin: 1rem 0 0; }
 .tool-card .ext { font-weight: 800; }
+
+/* ---------- 密碼解鎖 / Password lock ---------- */
+.lock-card { max-width: 440px; margin: 0 auto; background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.5rem; box-shadow: 6px 6px 0 var(--lav-soft); text-align: center; }
+.lock-icon { width: 64px; height: 64px; margin: 0 auto 0.6rem; border-radius: 50%; background: var(--lav-soft); color: var(--purple); display: grid; place-items: center; }
+.lock-icon svg { width: 32px; height: 32px; }
+.lock-title { margin: 0 0 0.4rem; font-size: 1.4rem; }
+.lock-hint { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+.lock-field { display: grid; gap: 0.3rem; text-align: left; font-weight: 700; color: var(--plum); margin-bottom: 0.7rem; }
+.lock-field input { font: inherit; font-size: 1.05rem; padding: 0.6rem 0.8rem; border: 2px solid var(--line); border-radius: 14px; }
+.lock-field input:focus { border-color: var(--purple); outline: none; }
+.lock-remember { display: flex; align-items: center; gap: 0.5rem; justify-content: center; font-size: 0.9rem; color: var(--muted); margin-bottom: 0.9rem; }
+.lock-remember input { accent-color: var(--purple); width: 18px; height: 18px; }
+.lock-actions .btn { width: 100%; justify-content: center; }
+.lock-error { color: #b8135a; font-weight: 700; margin: 0.8rem 0 0; }
+.lock-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.8rem; font-weight: 800; color: var(--purple); background: var(--lav-soft); border-radius: 999px; padding: 0.15rem 0.6rem; }
+.lock-badge svg { width: 14px; height: 14px; }
+.tool-form { display: grid; gap: 0.8rem; }
+.tool-form textarea { font: inherit; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; min-height: 160px; padding: 0.6rem 0.8rem; border: 2px solid var(--line); border-radius: 14px; }
