@@ -683,6 +683,79 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .art .fadeB { animation: fadecycle 4.5s ease-in-out infinite; animation-delay: 1.5s; }
 .art .fadeC { animation: fadecycle 4.5s ease-in-out infinite; animation-delay: 3s; }
 @keyframes fadecycle { 0%, 60%, 100% { opacity: 0.2; } 15%, 45% { opacity: 1; } }
+.art .slide { animation: slide 3.2s ease-in-out infinite alternate; }
+@keyframes slide { from { transform: translateX(-14px); } to { transform: translateX(14px); } }
+.art .sweep { transform-box: view-box; transform-origin: 48px 56px; animation: sweep 4s ease-in-out infinite alternate; }
+@keyframes sweep { from { transform: rotate(-55deg); } to { transform: rotate(55deg); } }
+.art .align { animation: align 3s ease-in-out infinite; }
+@keyframes align { 0%, 15% { transform: translate(7px, 5px); } 45%, 80% { transform: translate(0, 0); } 100% { transform: translate(7px, 5px); } }
+.art .inflate { transform-box: fill-box; transform-origin: center; animation: inflate 5s ease-in-out infinite; }
+@keyframes inflate { 0%, 100% { transform: scale(0.88); } 25%, 70% { transform: scale(1.06); } }
+.art .growx, .art .growx2, .art .growx3 { transform-box: fill-box; transform-origin: left center; animation: growx 4s ease-out infinite; }
+.art .growx2 { animation-delay: 0.3s; }
+.art .growx3 { animation-delay: 0.6s; }
+@keyframes growx { 0% { transform: scaleX(0.05); } 35%, 85% { transform: scaleX(1); } 100% { transform: scaleX(0.05); } }
+.art .rise { animation: rise 2.6s ease-in-out infinite alternate; }
+@keyframes rise { from { transform: translateY(6px); } to { transform: translateY(-6px); } }
+.art .blink2 { animation: blink 1.6s steps(1) infinite; animation-delay: 0.8s; }
+.art .spinslow2 { transform-box: fill-box; transform-origin: center; animation: spin 14s linear infinite; }
+.art .lid { transform-box: fill-box; transform-origin: top center; animation: lid 3.6s ease-in-out infinite; }
+@keyframes lid { 0%, 86%, 100% { transform: scaleY(0.08); } 91%, 95% { transform: scaleY(1); } }
+
+/* ---------- 部位風險地圖 / Site risk map ---------- */
+.sitemap-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+.sitemap-tabs button { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; padding: 0.45rem 0.95rem; border-radius: 999px; border: 2px solid var(--line); background: #fff; color: var(--plum); cursor: pointer; box-shadow: 3px 3px 0 var(--lav-soft); }
+.sitemap-tabs button:hover { border-color: var(--lav); }
+.sitemap-tabs button[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: #fff; box-shadow: 3px 3px 0 var(--pink); }
+.sitemap-grid { display: grid; grid-template-columns: 200px 1fr; gap: 1.3rem; align-items: start; }
+.sitemap-figure { background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 0.8rem; box-shadow: 5px 5px 0 var(--mint-soft); position: sticky; top: 5.2rem; }
+.sitemap-figure svg { width: 100%; height: auto; display: block; overflow: visible; }
+.sitemap-figure .hot { cursor: pointer; }
+.sitemap-figure .hot circle, .sitemap-figure .hot ellipse, .sitemap-figure .hot rect { fill: var(--pink); opacity: 0.55; stroke: #fff; stroke-width: 1.5; transition: opacity 0.2s, fill 0.2s; }
+.sitemap-figure .hot:hover circle, .sitemap-figure .hot:hover ellipse, .sitemap-figure .hot:hover rect { opacity: 0.85; }
+.sitemap-figure .hot.is-active circle, .sitemap-figure .hot.is-active ellipse, .sitemap-figure .hot.is-active rect { fill: var(--purple); opacity: 0.9; }
+.sitemap-figure .hot text { font-family: var(--font-display); font-size: 7px; font-weight: 600; fill: var(--plum); pointer-events: none; }
+.sitemap-figure .hint { font-size: 0.82rem; color: var(--muted); text-align: center; margin: 0.5rem 0 0; }
+.site-panel { background: #fff; border: 2px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.2rem 1.2rem; box-shadow: 5px 5px 0 var(--pink-soft); margin: 0 0 1rem; min-width: 0; }
+.site-panel[hidden] { display: none; }
+.site-panel .site-head { display: flex; gap: 0.9rem; align-items: center; margin: 0 0 0.6rem; }
+.site-panel .site-head .art { width: 72px; height: 90px; flex: none; }
+.site-panel .site-head h3 { margin: 0 0 0.2rem; }
+.site-panel .site-head p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.risk-grid { display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 0.8rem 0; }
+.risk-col { border: 2px solid var(--line); border-radius: var(--radius-sm); padding: 0.8rem 0.95rem 0.9rem; background: #fff; min-width: 0; }
+.risk-col h4 { margin: 0 0 0.45rem; font-size: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.5rem; }
+.risk-col h4 .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; flex: none; }
+.risk-col.common { box-shadow: 4px 4px 0 var(--pink-soft); } .risk-col.common .dot { background: var(--pink); }
+.risk-col.late { box-shadow: 4px 4px 0 var(--lav-soft); } .risk-col.late .dot { background: var(--lav); }
+.risk-col.rare { box-shadow: 4px 4px 0 var(--butter-soft); } .risk-col.rare .dot { background: var(--butter); }
+.risk-col .tier { display: block; flex-basis: 100%; padding-left: 1.3rem; font-size: 0.82rem; color: var(--muted); font-weight: 400; line-height: 1.35; }
+.risk-col ul { margin: 0; padding-left: 1.1rem; font-size: 0.95rem; }
+.risk-col li { margin: 0 0 0.25rem; }
+.site-panel .site-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0 0; }
+.site-panel .site-links a { font-size: 0.9rem; }
+@media (max-width: 760px) { .sitemap-grid { grid-template-columns: 1fr; } .sitemap-figure { position: static; max-width: 240px; margin: 0 auto; } }
+
+/* ---------- 比較表 / Comparison table ---------- */
+.table-wrap { overflow-x: auto; background: #fff; border: 2px solid var(--line); border-radius: var(--radius-sm); box-shadow: 4px 4px 0 var(--butter-soft); }
+.compare { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 560px; }
+.compare th, .compare td { padding: 0.65rem 0.8rem; border-bottom: 2px solid var(--line); text-align: left; vertical-align: top; }
+.compare thead th { background: var(--lav-soft); color: var(--purple-dark); font-family: var(--font-display); font-weight: 600; }
+.compare tbody th { font-weight: 800; color: var(--plum); white-space: nowrap; background: var(--cream, #fffaf6); }
+.compare tr:last-child td, .compare tr:last-child th { border-bottom: 0; }
+.compare .art { width: 42px; height: 42px; vertical-align: middle; margin-right: 0.3rem; }
+
+/* ---------- 三層風險條 / Risk tiers ---------- */
+.tiers { display: grid; gap: 0.7rem; margin: 0.8rem 0 0; }
+.tier-row { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 0.8rem; align-items: center; }
+.tier-row strong { font-family: var(--font-display); font-weight: 600; color: var(--plum); }
+.tier-row .bar-track { background: var(--lav-soft); border-radius: 999px; height: 1.1rem; overflow: hidden; }
+.tier-row .bar-fill { height: 100%; border-radius: 999px; transform-origin: left center; animation: growbar 1.2s ease-out both; }
+.tier-row.common .bar-fill { width: 80%; background: var(--pink); }
+.tier-row.late .bar-fill { width: 40%; background: var(--lav); }
+.tier-row.rare .bar-fill { width: 8%; background: var(--butter); }
+.tier-row small { display: block; color: var(--muted); font-size: 0.82rem; }
+
 @media (max-width: 600px) {
   .glance { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
   .glance-tile { padding: 0.8rem 0.5rem 0.9rem; }

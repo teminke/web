@@ -124,11 +124,56 @@
     }
   }
 
+  /* 部位風險地圖：點選部位或標籤，只顯示該部位的面板 / Site risk map */
+  function initSitemaps() {
+    var maps = document.querySelectorAll('.sitemap');
+    for (var i = 0; i < maps.length; i++) {
+      (function (map) {
+        var buttons = map.querySelectorAll('.sitemap-tabs button[data-site]');
+        var hots = map.querySelectorAll('.hot[data-site]');
+        var panels = map.querySelectorAll('.site-panel[data-site]');
+        if (!panels.length) { return; }
+        function show(site, focusPanel) {
+          var found = false;
+          for (var p = 0; p < panels.length; p++) {
+            var on = panels[p].getAttribute('data-site') === site;
+            panels[p].hidden = !on;
+            if (on) { found = true; }
+          }
+          if (!found) { return; }
+          for (var b = 0; b < buttons.length; b++) { buttons[b].setAttribute('aria-pressed', buttons[b].getAttribute('data-site') === site ? 'true' : 'false'); }
+          for (var h = 0; h < hots.length; h++) {
+            if (hots[h].getAttribute('data-site') === site) { hots[h].classList.add('is-active'); } else { hots[h].classList.remove('is-active'); }
+          }
+          if (focusPanel) {
+            var panel = map.querySelector('.site-panel[data-site="' + site + '"]');
+            if (panel && panel.scrollIntoView) { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+          }
+        }
+        for (var b = 0; b < buttons.length; b++) {
+          buttons[b].addEventListener('click', function (e) { show(e.currentTarget.getAttribute('data-site'), true); });
+        }
+        for (var h = 0; h < hots.length; h++) {
+          hots[h].addEventListener('click', function (e) { e.preventDefault(); show(e.currentTarget.getAttribute('data-site'), true); });
+        }
+        var initial = panels[0].getAttribute('data-site');
+        var hash = (window.location.hash || '').replace('#site-', '');
+        if (hash && map.querySelector('.site-panel[data-site="' + hash + '"]')) { initial = hash; }
+        show(initial, false);
+        window.addEventListener('hashchange', function () {
+          var h2 = (window.location.hash || '').replace('#site-', '');
+          if (h2 && map.querySelector('.site-panel[data-site="' + h2 + '"]')) { show(h2, true); }
+        });
+      })(maps[i]);
+    }
+  }
+
   function init() {
     initNav();
     initYear();
     initShare();
     initChecklists();
+    initSitemaps();
   }
 
   if (document.readyState === 'loading') {
