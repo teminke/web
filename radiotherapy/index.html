@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-zh="放射線腫瘤治療專區 – 柯德敏 Te-Min Ke" data-en="Radiation Oncology Treatment – Te-Min Ke">放射線腫瘤治療專區 – 柯德敏 Te-Min Ke</title>
-  <meta name="description" content="放射線腫瘤治療專區（目前需要密碼）。" data-zh="放射線腫瘤治療專區（目前需要密碼）。" data-en="Radiation oncology treatment section (password required for now)." data-i18n-attr="content">
+  <meta name="description" content="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。" data-zh="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。" data-en="Illustrated guides to techniques, equipment, consent and risks by site (password required for now)." data-i18n-attr="content">
   <meta name="author" content="柯德敏 Te-Min Ke">
   <meta name="theme-color" content="#fff6fa">
   <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta property="og:url" content="https://teminke.github.io/web/radiotherapy/index.html">
   <meta property="og:title" content="放射線腫瘤治療專區 – 柯德敏 Te-Min Ke | Radiation Oncology Treatment – Te-Min Ke">
-  <meta property="og:description" content="放射線腫瘤治療專區（目前需要密碼）。">
+  <meta property="og:description" content="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。">
   <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -78,19 +78,23 @@
   <main id="main" tabindex="-1">
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow" data-zh="放射線腫瘤治療專區" data-en="Radiotherapy">放射線腫瘤治療專區</p>
+        <p class="eyebrow" data-zh="放射線腫瘤治療專區" data-en="Radiation Oncology Treatment">放射線腫瘤治療專區</p>
         <h1 data-zh="放射線腫瘤治療專區" data-en="Radiation Oncology Treatment">放射線腫瘤治療專區</h1>
-        <p class="lead" data-zh="內容整理中；目前需要密碼才能閱讀。" data-en="Content in preparation; a password is required for now.">內容整理中；目前需要密碼才能閱讀。</p>
+        <p class="lead" data-zh="治療機器與技術、同意書與各部位風險的專篇圖解說明。內容已加密，輸入密碼後會在您的瀏覽器中解開。" data-en="Illustrated guides to the machines and techniques, the consent form and the risks by site. The content is encrypted and is decrypted in your browser after you enter the password.">治療機器與技術、同意書與各部位風險的專篇圖解說明。內容已加密，輸入密碼後會在您的瀏覽器中解開。</p>
       </div>
     </section>
 
     <div class="container page-body">
       <div id="rt-lock"><p class="st-hint"><span data-zh="載入中…（需要啟用 JavaScript）" data-en="Loading… (JavaScript required)">載入中…（需要啟用 JavaScript）</span></p></div>
-      <div id="rt-content" hidden></div>
     </div>
 
   </main>
 
+  <aside class="disclaimer" aria-label="免責聲明" data-zh="免責聲明" data-en="Disclaimer" data-i18n-attr="aria-label">
+    <div class="container">
+      <p><span data-zh="本站內容僅供衛教參考，不能取代醫師面對面的診療。" data-en="The content on this site is for patient-education reference only and cannot replace face-to-face consultation with your physician.">本站內容僅供衛教參考，不能取代醫師面對面的診療。</span></p>
+    </div>
+  </aside>
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
@@ -121,10 +125,22 @@
   <script src="../assets/site.js"></script>
   <script src="../assets/lock.js"></script>
   <script>
-    TMKLock.mount(document.getElementById("rt-lock"), "content.enc.json", function (html) {
-      var box = document.getElementById("rt-content"); box.innerHTML = html; box.hidden = false;
-      document.getElementById("rt-lock").hidden = true;
-      if (window.siteI18n) { window.siteI18n.apply(window.siteI18n.current()); }
+    TMKLock.mount(document.getElementById("rt-lock"), "content.enc.json", function (text) {
+      var data = JSON.parse(text); var main = document.getElementById("main");
+      function render() {
+        var h = (window.location.hash || "").replace(/^#/, "");
+        var m = /^a\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(h);
+        var slug = (m && data.articles[m[1]]) ? m[1] : null;
+        main.innerHTML = slug ? data.articles[slug] : data.index;
+        if (window.siteI18n) { window.siteI18n.apply(window.siteI18n.current()); }
+        if (window.siteInit) { window.siteInit.checklists(); window.siteInit.sitemaps(); }
+        if (m && m[2]) {
+          var tab = main.querySelector('.sitemap-tabs button[data-site="' + m[2].replace(/^site-/, "") + '"]');
+          if (tab) { tab.click(); }
+          var el = document.getElementById(m[2]); if (el && el.scrollIntoView) { el.scrollIntoView(); }
+        } else { window.scrollTo(0, 0); }
+      }
+      window.addEventListener("hashchange", render); render();
     });
   </script>
 </body>

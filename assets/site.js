@@ -168,6 +168,9 @@
     }
   }
 
+  /* 供加密內容解開後重新初始化 / re-init hooks for content injected after decryption */
+  window.siteInit = { share: initShare, checklists: initChecklists, sitemaps: initSitemaps };
+
   function init() {
     initNav();
     initYear();
