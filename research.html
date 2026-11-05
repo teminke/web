@@ -1,115 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research – Te-Min Ke</title>
-  <style>
-    html { font-size: 18px; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: #68217A;
-      color: white;
-      padding: 40px 10px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 15px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1000px;
-      margin: -20px auto 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      font-size: 2rem;
-      color: #68217A;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
-    ul {
-      line-height: 1.8;
-      font-size: 1rem;
-      margin: 0;
-      padding: 0 0 0 20px;
-    }
-    ul li {
-      margin-bottom: 1rem;
-    }
-    a {
-      color: #68217A;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title data-zh="研究 – 柯德敏 Te-Min Ke" data-en="Research – Te-Min Ke">研究 – 柯德敏 Te-Min Ke</title>
+  <meta name="description" content="柯德敏醫師的研究專長與興趣，以及胰臟癌風險預測模型線上工具。" data-zh="柯德敏醫師的研究專長與興趣，以及胰臟癌風險預測模型線上工具。" data-en="Research expertise and interests of Dr. Te-Min Ke, with web tools for pancreatic cancer risk prediction." data-i18n-attr="content">
+  <meta name="author" content="柯德敏 Te-Min Ke">
+  <meta name="theme-color" content="#fff6fa">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="柯德敏 Te-Min Ke">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="https://teminke.github.io/web/research.html">
+  <meta property="og:title" content="研究 – 柯德敏 Te-Min Ke | Research – Te-Min Ke">
+  <meta property="og:description" content="柯德敏醫師的研究專長與興趣，以及胰臟癌風險預測模型線上工具。">
+  <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,900&amp;family=Zhi+Mang+Xing&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/tmk-round-site.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/tmk-round.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
+    (function () {
+      try {
+        var l = localStorage.getItem('tmk-site-lang');
+        if (l !== 'zh' && l !== 'en') {
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          l = /^zh/i.test(n) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-zh="跳到主要內容" data-en="Skip to main content">跳到主要內容</a>
 
-  <header>
-    <h1>Research Expertise &amp; Web Showcase</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="awards.html">Awards</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/favicon.svg" width="34" height="34" alt="">
+        <span>柯德敏 <span class="brand-en">Te-Min Ke</span></span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="lang-toggle" aria-label="切換語言 / Switch language">
+          <span class="lang-opt lang-zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟或關閉主選單" data-zh="開啟或關閉主選單" data-en="Open or close main menu" data-i18n-attr="aria-label">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主選單" data-zh="主選單" data-en="Main navigation" data-i18n-attr="aria-label">
+        <ul>
+        <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+        <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="research.html" aria-current="page" data-zh="研究" data-en="Research">研究</a></li>
+        <li><a href="publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+        <li><a href="awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+        <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+        <li><a href="radiotherapy/index.html" data-zh="放射線腫瘤治療專區" data-en="Radiotherapy">放射線腫瘤治療專區</a></li>
+        <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+        <li><a href="clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+        <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+        <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        <li class="nav-sep"><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Research Expertise and Interests</h2>
-    <ul>
-      <li><strong>Cancer epidemiology</strong>: Personalized cancer prevention, treatment, and prognosis, with a focus on radiation oncology</li>
-      <li><strong>Big data cohort analysis</strong> (e.g., UK Biobank and other large-scale population studies)</li>
-      <li><strong>Genomic epidemiology</strong>: GWAS, Polygenic Risk Scores (PRS), next-generation sequencing (NGS)</li>
-      <li><strong>Epigenetic epidemiology</strong>: Biological age, Epigenetic Mutation Load (EML)</li>
-      <li><strong>Causal inference</strong>: Mendelian Randomization (MR)</li>
-      <li><strong>Computational methods</strong>: Machine learning, artificial intelligence, predictive modeling</li>
-      <li><strong>Biostatistical software</strong>: Stata, SPSS, R, Python</li>
-    </ul>
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-zh="研究" data-en="Research">研究</p>
+        <h1 data-zh="研究專長與線上工具展示" data-en="Research Expertise &amp; Web Showcase">研究專長與線上工具展示</h1>
+        <p class="lead" data-zh="我的研究聚焦於癌症流行病學與個人化預防，結合大型世代資料、基因體學與機器學習。" data-en="My research focuses on cancer epidemiology and personalised prevention, combining large cohorts, genomics and machine learning.">我的研究聚焦於癌症流行病學與個人化預防，結合大型世代資料、基因體學與機器學習。</p>
+      </div>
+    </section>
 
-    <h2>Web Showcase of Pancreatic Cancer Risk Prediction Models</h2>
-    <ul>
-      <li>
-        <strong>Pancreatic Cancer 5-Year and 10-Year Absolute Risk Calculator:</strong><br>
-        <a href="https://sunnyteminke.github.io/Pancreatic-Cancer-5-year-and-10-year-Absolute-Risk-Calculator/" target="_blank">
-          sunnyteminke.github.io/Pancreatic-Cancer-5-year-…-Absolute-Risk-Calculator
-        </a>
-      </li>
-      <li>
-        <strong>Dynamic Nomogram:</strong><br>
-        <a href="https://ts35ky-temin-ke.shinyapps.io/DynNomapp/" target="_blank">
-          ts35ky-temin-ke.shinyapps.io/DynNomapp
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div class="container page-body">
+      <section class="block">
+        <h2 data-zh="研究專長與興趣" data-en="Research Expertise and Interests">研究專長與興趣</h2>
+        <div class="card">
+          <ul>
+          <li><span class="lead-term" data-zh="癌症流行病學" data-en="Cancer epidemiology">癌症流行病學</span><span data-zh="：" data-en=": ">：</span><span data-zh="個人化癌症預防、治療與預後，聚焦於放射腫瘤學" data-en="Personalized cancer prevention, treatment, and prognosis, with a focus on radiation oncology">個人化癌症預防、治療與預後，聚焦於放射腫瘤學</span></li>
+          <li><span class="lead-term" data-zh="大數據世代研究分析" data-en="Big data cohort analysis">大數據世代研究分析</span><span data-zh="（例如 UK Biobank 及其他大型族群研究）" data-en=" (e.g., UK Biobank and other large-scale population studies)">（例如 UK Biobank 及其他大型族群研究）</span></li>
+          <li><span class="lead-term" data-zh="基因體流行病學" data-en="Genomic epidemiology">基因體流行病學</span><span data-zh="：" data-en=": ">：</span><span data-zh="全基因體關聯分析（GWAS）、多基因風險分數（PRS）、次世代定序（NGS）" data-en="GWAS, Polygenic Risk Scores (PRS), next-generation sequencing (NGS)">全基因體關聯分析（GWAS）、多基因風險分數（PRS）、次世代定序（NGS）</span></li>
+          <li><span class="lead-term" data-zh="表觀遺傳流行病學" data-en="Epigenetic epidemiology">表觀遺傳流行病學</span><span data-zh="：" data-en=": ">：</span><span data-zh="生物年齡、表觀遺傳突變負荷（Epigenetic Mutation Load, EML）" data-en="Biological age, Epigenetic Mutation Load (EML)">生物年齡、表觀遺傳突變負荷（Epigenetic Mutation Load, EML）</span></li>
+          <li><span class="lead-term" data-zh="因果推論" data-en="Causal inference">因果推論</span><span data-zh="：" data-en=": ">：</span><span data-zh="孟德爾隨機化（Mendelian Randomization, MR）" data-en="Mendelian Randomization (MR)">孟德爾隨機化（Mendelian Randomization, MR）</span></li>
+          <li><span class="lead-term" data-zh="計算方法" data-en="Computational methods">計算方法</span><span data-zh="：" data-en=": ">：</span><span data-zh="機器學習、人工智慧、預測模型" data-en="Machine learning, artificial intelligence, predictive modeling">機器學習、人工智慧、預測模型</span></li>
+          <li><span class="lead-term" data-zh="生物統計軟體" data-en="Biostatistical software">生物統計軟體</span><span data-zh="：" data-en=": ">：</span><span data-zh="Stata、SPSS、R、Python" data-en="Stata, SPSS, R, Python">Stata、SPSS、R、Python</span></li>
+          </ul>
+        </div>
+      </section>
 
+      <section class="block">
+        <h2 data-zh="胰臟癌風險預測模型線上展示" data-en="Web Showcase of Pancreatic Cancer Risk Prediction Models">胰臟癌風險預測模型線上展示</h2>
+        <p class="block-lead" data-zh="以下是研究成果的線上展示工具，連結會在新分頁開啟。" data-en="The following web tools showcase research outputs. Links open in a new tab.">以下是研究成果的線上展示工具，連結會在新分頁開啟。</p>
+        <div class="card-grid">
+          <div class="card link-card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 17l5-5 4 4 6-7"/><path d="M14 9h4v4"/></svg></span>
+            <h3 data-zh="胰臟癌 5 年與 10 年絕對風險計算器" data-en="Pancreatic Cancer 5-Year and 10-Year Absolute Risk Calculator">胰臟癌 5 年與 10 年絕對風險計算器</h3>
+            <p><a class="ext" href="https://sunnyteminke.github.io/Pancreatic-Cancer-5-year-and-10-year-Absolute-Risk-Calculator/" target="_blank" rel="noopener">sunnyteminke.github.io/Pancreatic-Cancer-5-year-…-Absolute-Risk-Calculator<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg><span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a></p>
+          </div>
+          <div class="card link-card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9V3"/><path d="M7.5 15h9"/></svg></span>
+            <h3 data-zh="動態列線圖（Dynamic Nomogram）" data-en="Dynamic Nomogram">動態列線圖（Dynamic Nomogram）</h3>
+            <p><a class="ext" href="https://ts35ky-temin-ke.shinyapps.io/DynNomapp/" target="_blank" rel="noopener">ts35ky-temin-ke.shinyapps.io/DynNomapp<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6"/></svg><span class="visually-hidden"><span data-zh="（新分頁開啟）" data-en="(opens in a new tab)">（新分頁開啟）</span></span></a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name"><strong>柯德敏 Te-Min Ke</strong>, MD, MPH, PhD</p>
+        <p><span data-zh="奇美醫院 放射腫瘤部" data-en="Department of Radiation Oncology, Chimei Medical Center, Tainan, Taiwan">奇美醫院 放射腫瘤部</span> · <a href="mailto:fwf2001@gmail.com">fwf2001@gmail.com</a></p>
+        <p>© <span data-year>2026</span> 柯德敏 Te-Min Ke. <span data-zh="版權所有，翻印必究。" data-en="All rights reserved.">版權所有，翻印必究。</span></p>
+      </div>
+      <nav aria-label="頁尾連結" data-zh="頁尾連結" data-en="Footer links" data-i18n-attr="aria-label">
+        <ul class="footer-links">
+          <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+          <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+          <li><a href="research.html" data-zh="研究" data-en="Research">研究</a></li>
+          <li><a href="publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+          <li><a href="awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+          <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+          <li><a href="radiotherapy/index.html" data-zh="放射線腫瘤治療專區" data-en="Radiotherapy">放射線腫瘤治療專區</a></li>
+          <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+          <li><a href="clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+          <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+          <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+          <li><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
-
-

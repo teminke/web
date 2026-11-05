@@ -1,252 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Publications – Te-Min Ke</title>
-  <style>
-    html { font-size: 18px; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
-    }
-    header {
-      background: #68217A;
-      color: white;
-      padding: 40px 10px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    nav {
-      margin-top: 15px;
-    }
-    nav a {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 15px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1000px;
-      margin: -20px auto 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      font-size: 2rem;
-      color: #68217A;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 20px;
-    }
-    .card {
-      background: #f1f1f1;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .card p {
-      margin: 0;
-      line-height: 1.8;
-      font-size: 1rem;
-    }
-    .card p strong.title {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    .card p a.doi {
-      color: #68217A;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .card p a.doi:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title data-zh="論文著作 – 柯德敏 Te-Min Ke" data-en="Publications – Te-Min Ke">論文著作 – 柯德敏 Te-Min Ke</title>
+  <meta name="description" content="柯德敏醫師的期刊論文與期刊摘要，依年份整理。" data-zh="柯德敏醫師的期刊論文與期刊摘要，依年份整理。" data-en="Journal articles and journal abstracts by Dr. Te-Min Ke, grouped by year." data-i18n-attr="content">
+  <meta name="author" content="柯德敏 Te-Min Ke">
+  <meta name="theme-color" content="#fff6fa">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="柯德敏 Te-Min Ke">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="https://teminke.github.io/web/publications.html">
+  <meta property="og:title" content="論文著作 – 柯德敏 Te-Min Ke | Publications – Te-Min Ke">
+  <meta property="og:description" content="柯德敏醫師的期刊論文與期刊摘要，依年份整理。">
+  <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,900&amp;family=Zhi+Mang+Xing&amp;family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/tmk-round-site.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts/tmk-round.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* 在樣式套用前先決定語言，避免切換鈕閃爍 / set language early to avoid flicker */
+    (function () {
+      try {
+        var l = localStorage.getItem('tmk-site-lang');
+        if (l !== 'zh' && l !== 'en') {
+          var n = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          l = /^zh/i.test(n) ? 'zh' : 'en';
+        }
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l === 'zh' ? 'zh-Hant' : 'en');
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-zh="跳到主要內容" data-en="Skip to main content">跳到主要內容</a>
 
-  <header>
-    <h1>Publications</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="awards.html">Awards</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img class="brand-mark" src="assets/favicon.svg" width="34" height="34" alt="">
+        <span>柯德敏 <span class="brand-en">Te-Min Ke</span></span>
+      </a>
+      <div class="header-tools">
+        <button type="button" class="lang-toggle" aria-label="切換語言 / Switch language">
+          <span class="lang-opt lang-zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt lang-en">EN</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="開啟或關閉主選單" data-zh="開啟或關閉主選單" data-en="Open or close main menu" data-i18n-attr="aria-label">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="主選單" data-zh="主選單" data-en="Main navigation" data-i18n-attr="aria-label">
+        <ul>
+        <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+        <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+        <li><a href="research.html" data-zh="研究" data-en="Research">研究</a></li>
+        <li><a href="publications.html" aria-current="page" data-zh="論文" data-en="Publications">論文</a></li>
+        <li><a href="awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+        <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+        <li><a href="radiotherapy/index.html" data-zh="放射線腫瘤治療專區" data-en="Radiotherapy">放射線腫瘤治療專區</a></li>
+        <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+        <li><a href="clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+        <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+        <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+        <li class="nav-sep"><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Journal Articles</h2>
+  <main id="main" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-zh="論文" data-en="Publications">論文</p>
+        <h1 data-zh="論文著作" data-en="Publications">論文著作</h1>
+        
+      </div>
+    </section>
 
-    <div class="card">
-      <p>
-    <strong class="title">Impact of Preoperative Chemoradiotherapy on Clinical Outcomes in Elderly Patients with Locally Advanced Rectal Cancer (Accepted for Publication)</strong>
-    Lin, T.; <strong>Ke, T.M.</strong>; Chow, W.H.; Chou, C.L.; Kuo, Y.H.; Chen, Y.C.; Ho, C.H.; Yang, C.C.
-    <em>Clinical Medicine Insights: Oncology</em>. Accepted 2026 Oct 16.
-    doi:10.1177/11795549261504647.
-      </p>
+    <div class="container page-body">
+      <ul class="pub-summary">
+        <li><a class="chip" href="#journal"><span data-zh="期刊論文" data-en="Journal articles">期刊論文</span></a></li>
+        <li><a class="chip" href="#conference"><span data-zh="期刊摘要" data-en="Journal abstracts">期刊摘要</span></a></li>
+      </ul>
+
+      <section class="block" id="journal">
+        <h2 data-zh="期刊論文" data-en="Journal Articles">期刊論文</h2>
+          <h3 class="year-heading">2026</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Impact of Preoperative Chemoradiotherapy on Clinical Outcomes in Elderly Patients with Locally Advanced Rectal Cancer (Accepted for Publication)</h4>
+            <p class="pub-authors">Lin, T.; <strong>Ke, T.M.</strong>; Chow, W.H.; Chou, C.L.; Kuo, Y.H.; Chen, Y.C.; Ho, C.H.; Yang, C.C.</p>
+            <p class="pub-venue"><em>Clinical Medicine Insights: Oncology</em>. Accepted 2026 Oct 16. doi:10.1177/11795549261504647.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Epigenetic Age Feedback as a Catalyst for Sustained Lifestyle Change: One-Year Results from the EU iHelp Study</h4>
+            <p class="pub-authors">Yang, N.Y.; Huang, Y.; Park, C.; <strong>Ke, T.M.</strong>; Tilston, G.; Manias, G.; Kyriazis, D.; Young, J.; Hart, S.; Fulford, G.; Lophatananon, A.; Muir, K.R.</p>
+            <p class="pub-venue"><em>Epigenomes</em>. 2026 Apr 1;10(2):22. <a href="https://doi.org/10.3390/epigenomes10020022" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/epigenomes10020022</a>. PMID:42029636; PMCID:PMC13108038.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Genetic Susceptibility to Helicobacter pylori Infection and Pancreatic Cancer Risk: A Two-Sample Mendelian Randomisation Study</h4>
+            <p class="pub-authors">Yang, N.Y.; <strong>Ke, T.M.</strong>; Huang, Y.; Lophatananon, A.; Muir, K.R.</p>
+            <p class="pub-venue"><em>Life (Basel)</em>. 2026 Feb 7;16(2):284. <a href="https://doi.org/10.3390/life16020284" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/life16020284</a>. PMID:41752920; PMCID:PMC12941709.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Survival Outcomes of the Use of Adjuvant Chemotherapy in Resected Esophagus Cancer After Neoadjuvant Chemoradiotherapy</h4>
+            <p class="pub-authors"><strong>Ke, T.M.</strong>; Lin, T.; Chow, W.H.; Ho, C.H.; Chen, Y.C.; Li, C.F.; Yang, C.C.; Kuo, Y.H.</p>
+            <p class="pub-venue"><em>Eur J Surg Oncol</em>. 2026 Jan;52(1):111177. <a href="https://doi.org/10.1016/j.ejso.2025.111177" class="pub-doi" target="_blank" rel="noopener">doi:10.1016/j.ejso.2025.111177</a>. PMID:41223457.</p>
+          </article>
+          <h3 class="year-heading">2024</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Exploring the Relationships between Lifestyle Patterns and Epigenetic Biological Age Measures in Men</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R.</p>
+            <p class="pub-venue"><em>Biomedicines</em>. 2024 Sep 2;12(9):1985. <a href="https://doi.org/10.3390/biomedicines12091985" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/biomedicines12091985</a>. PMID:39335499; PMCID:PMC11428654.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Strengthening the Evidence for a Causal Link between Type 2 Diabetes Mellitus and Pancreatic Cancer: Insights from Two-Sample and Multivariable Mendelian Randomization</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R.</p>
+            <p class="pub-venue"><em>Int J Mol Sci</em>. 2024 Apr 23;25(9):4615. <a href="https://doi.org/10.3390/ijms25094615" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/ijms25094615</a>. PMID:38731833; PMCID:PMC11082974.</p>
+          </article>
+          <h3 class="year-heading">2023</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">An Integrative Pancreatic Cancer Risk Prediction Model in the UK Biobank</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R.</p>
+            <p class="pub-venue"><em>Biomedicines</em>. 2023 Dec 1;11(12):3206. <a href="https://doi.org/10.3390/biomedicines11123206" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/biomedicines11123206</a>. PMID:38137427; PMCID:PMC10740416.</p>
+          </article>
+          <h3 class="year-heading">2022</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Risk Factors Associated with Pancreatic Cancer in the UK Biobank Cohort</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R.</p>
+            <p class="pub-venue"><em>Cancers (Basel)</em>. 2022 Oct 12;14(20):4991. <a href="https://doi.org/10.3390/cancers14204991" class="pub-doi" target="_blank" rel="noopener">doi:10.3390/cancers14204991</a>. PMCID:PMC9599736.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Risk Factors of Pancreatic Cancer: A Literature Review</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Nieroda, Marzena; Kyriazis, Dimosthenis; Manias, George; Wajid, Usman; Tomson, Tanja; Muir, Kenneth R.</p>
+            <p class="pub-venue"><em>Cancer Reports and Reviews</em>. Sep 2022. <a href="https://doi.org/10.15761/CRR.1000241" class="pub-doi" target="_blank" rel="noopener">doi:10.15761/CRR.1000241</a>.</p>
+          </article>
+          <h3 class="year-heading">2020</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">High Neutrophil-to-Lymphocyte Ratio and Platelet-to-Lymphocyte Ratio Predict Poor Survival in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lin, Li-Ching; Huang, Chun-Che; Chien, Yu-Wun; Ting, Wei-Chen; Yang, Ching-Chieh.</p>
+            <p class="pub-venue"><em>Medicine (Baltimore)</em>. 2020 Apr;99(17):e19877. <a href="https://doi.org/10.1097/MD.0000000000019877" class="pub-doi" target="_blank" rel="noopener">doi:10.1097/MD.0000000000019877</a>.</p>
+          </article>
+          <h3 class="year-heading">2019</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Pterostilbene Inhibits Lung Squamous Cell Carcinoma Growth Both In Vitro and In Vivo by Inducing S Phase Arrest and Apoptosis</h4>
+            <p class="pub-authors">Tan, Kok-Tong; Chen, Ping-Wen; Li, Shiming; <strong>Ke, Te-Min</strong>; Lin, Sheng-Hao; Yang, Ching-Chieh.</p>
+            <p class="pub-venue"><em>Oncology Letters</em>. 2019 Aug;18(2):1631–1640. <a href="https://doi.org/10.3892/ol.2019.10499" class="pub-doi" target="_blank" rel="noopener">doi:10.3892/ol.2019.10499</a>.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">The Impact of Marital Status on Survival in Patients with Surgically Treated Colon Cancer</h4>
+            <p class="pub-authors">Yang, Ching-Chieh; Cheng, Li-Chin; Lin, Yu-Wei; Wang, Shih-Chang; <strong>Ke, Te-Min</strong>; Huang, Chung-I; Su, Yu-Chieh; Tai, Ming-Hong.</p>
+            <p class="pub-venue"><em>Medicine (Baltimore)</em>. 2019 Mar;98(11):e14856. <a href="https://doi.org/10.1097/MD.0000000000014856" class="pub-doi" target="_blank" rel="noopener">doi:10.1097/MD.0000000000014856</a>.</p>
+          </article>
+          <h3 class="year-heading">2018</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Evaluating the Optimal Radiation Dose for Definitive Chemoradiotherapy for Esophageal Squamous Cell Carcinoma: A Single Institution Experience</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Fong, Yao; Lin, Li-Ching; Chien, Yu-Wun; Yang, Ching-Chieh; Lin, Chia-Hui; Lin, Kuei-Li; Que, Jenny.</p>
+            <p class="pub-venue"><em>Medicine (Baltimore)</em>. 2018 Nov;97(46):e13214. <a href="https://doi.org/10.1097/MD.0000000000013214" class="pub-doi" target="_blank" rel="noopener">doi:10.1097/MD.0000000000013214</a>.</p>
+          </article>
+      </section>
+
+      <section class="block" id="conference">
+        <h2 data-zh="期刊摘要" data-en="Journal Abstracts">期刊摘要</h2>
+        <p class="block-lead" data-zh="發表於學術會議並刊載於期刊摘要集的論文。" data-en="Abstracts presented at scientific meetings and published in journal supplements.">發表於學術會議並刊載於期刊摘要集的論文。</p>
+          <h3 class="year-heading">2025</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Individualized Pancreatic Cancer Prevention: A Machine Learning Approach Integrating Polygenic Risk Scores for Absolute Risk Prediction in UK Biobank and Community Settings</h4>
+            <p class="pub-authors"><strong>Ke, T.M.</strong> et al.</p>
+            <p class="pub-venue"><em>International Journal of Radiation Oncology, Biology, Physics</em>. Volume 123, Issue 1, e659–e660. <a href="https://doi.org/10.1016/j.ijrobp.2025.06.2990" class="pub-doi" target="_blank" rel="noopener">doi:10.1016/j.ijrobp.2025.06.2990</a>.</p>
+          </article>
+          <h3 class="year-heading">2022</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Abstract 2236: A Novel Integrated Predictive Model for Pancreatic Cancer</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth; Yu, Xinzhu.</p>
+            <p class="pub-venue"><em>Cancer Research</em>. Jun 2022. <a href="https://doi.org/10.1158/1538-7445.AM2022-2236" class="pub-doi" target="_blank" rel="noopener">doi:10.1158/1538-7445.AM2022-2236</a>.</p>
+          </article>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Abstract 3654: Development and Application of the iHELP Platform to Facilitate the Establishment of Healthy Habits for the Prevention of Pancreatic Cancer</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; iHELP; Lophatananon, Artitaya; Nieroda, Marzena; Muir, Kenneth.</p>
+            <p class="pub-venue"><em>Cancer Research</em>. Jun 2022. <a href="https://doi.org/10.1158/1538-7445.AM2022-3654" class="pub-doi" target="_blank" rel="noopener">doi:10.1158/1538-7445.AM2022-3654</a>.</p>
+          </article>
+          <h3 class="year-heading">2020</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Pre-CCRT Systemic Inflammation Index (SII) and Neutrophil-to-Lymphocyte Ratio (NLR) Are Better Than Platelet-to-Lymphocyte Ratio (PLR) as Predictors for pCR in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy (CCRT)</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Huang, C.C.; Yang, C.C.</p>
+            <p class="pub-venue"><em>Int J Radiat Oncol Biol Phys</em>. 2020 Nov. <a href="https://doi.org/10.1016/j.ijrobp.2020.07.1899" class="pub-doi" target="_blank" rel="noopener">doi:10.1016/j.ijrobp.2020.07.1899</a>.</p>
+          </article>
+          <h3 class="year-heading">2019</h3>
+          <article class="pub" lang="en">
+            <h4 class="pub-title">Neutrophil-to-Lymphocyte Ratio and Platelet-to-Lymphocyte Ratio Predict Poor Survival in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy</h4>
+            <p class="pub-authors"><strong>Ke, Te-Min</strong>; Yang, C.C.</p>
+            <p class="pub-venue"><em>Int J Radiat Oncol Biol Phys</em>. 2019 Sep. <a href="https://doi.org/10.1016/j.ijrobp.2019.06.2145" class="pub-doi" target="_blank" rel="noopener">doi:10.1016/j.ijrobp.2019.06.2145</a>.</p>
+          </article>
+      </section>
     </div>
 
-    <div class="card">
-      <p>
-    <strong class="title">Epigenetic Age Feedback as a Catalyst for Sustained Lifestyle Change: One-Year Results from the EU iHelp Study</strong>
-    Yang, N.Y.; Huang, Y.; Park, C.; <strong>Ke, T.M.</strong>; Tilston, G.; Manias, G.; Kyriazis, D.; Young, J.; Hart, S.; Fulford, G.; Lophatananon, A.; Muir, K.R.
-    <em>Epigenomes</em>. 2026 Apr 1;10(2):22.
-    <a href="https://doi.org/10.3390/epigenomes10020022" class="doi" target="_blank">doi:10.3390/epigenomes10020022</a>.
-    PMID:42029636; PMCID:PMC13108038.
-      </p>
-    </div>
+  </main>
 
-    <div class="card">
-      <p>
-    <strong class="title">Genetic Susceptibility to Helicobacter pylori Infection and Pancreatic Cancer Risk: A Two-Sample Mendelian Randomisation Study</strong>
-    Yang, N.Y.; <strong>Ke, T.M.</strong>; Huang, Y.; Lophatananon, A.; Muir, K.R. 
-    <em>Life (Basel)</em>. 2026 Feb 7;16(2):284. 
-    <a href="https://doi.org/10.3390/life16020284" class="doi" target="_blank">doi:10.3390/life16020284</a>. 
-    PMID:41752920; PMCID:PMC12941709.
-      </p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name"><strong>柯德敏 Te-Min Ke</strong>, MD, MPH, PhD</p>
+        <p><span data-zh="奇美醫院 放射腫瘤部" data-en="Department of Radiation Oncology, Chimei Medical Center, Tainan, Taiwan">奇美醫院 放射腫瘤部</span> · <a href="mailto:fwf2001@gmail.com">fwf2001@gmail.com</a></p>
+        <p>© <span data-year>2026</span> 柯德敏 Te-Min Ke. <span data-zh="版權所有，翻印必究。" data-en="All rights reserved.">版權所有，翻印必究。</span></p>
+      </div>
+      <nav aria-label="頁尾連結" data-zh="頁尾連結" data-en="Footer links" data-i18n-attr="aria-label">
+        <ul class="footer-links">
+          <li><a href="index.html" data-zh="首頁" data-en="Home">首頁</a></li>
+          <li><a href="about.html" data-zh="關於" data-en="About">關於</a></li>
+          <li><a href="research.html" data-zh="研究" data-en="Research">研究</a></li>
+          <li><a href="publications.html" data-zh="論文" data-en="Publications">論文</a></li>
+          <li><a href="awards.html" data-zh="獲獎" data-en="Awards">獲獎</a></li>
+          <li><a href="education/index.html" data-zh="衛教專區" data-en="Patient Education">衛教專區</a></li>
+          <li><a href="radiotherapy/index.html" data-zh="放射線腫瘤治療專區" data-en="Radiotherapy">放射線腫瘤治療專區</a></li>
+          <li><a href="teaching/index.html" data-zh="教學" data-en="Teaching">教學</a></li>
+          <li><a href="clinical/index.html" data-zh="臨床參考" data-en="Clinical">臨床參考</a></li>
+          <li><a href="arts.html" data-zh="文藝" data-en="Arts">文藝</a></li>
+          <li><a href="contact.html" data-zh="聯絡" data-en="Contact">聯絡</a></li>
+          <li><a href="faith.html" data-zh="信仰與見證" data-en="Faith">信仰與見證</a></li>
+        </ul>
+      </nav>
     </div>
+  </footer>
 
-    <div class="card">
-      <p>
-    <strong class="title">Survival Outcomes of the Use of Adjuvant Chemotherapy in Resected Esophagus Cancer After Neoadjuvant Chemoradiotherapy</strong>
-    <strong>Ke, T.M.</strong>; Lin, T.; Chow, W.H.; Ho, C.H.; Chen, Y.C.; Li, C.F.; Yang, C.C.; Kuo, Y.H. 
-    <em>Eur J Surg Oncol</em>. 2026 Jan;52(1):111177. 
-    <a href="https://doi.org/10.1016/j.ejso.2025.111177" class="doi" target="_blank">doi:10.1016/j.ejso.2025.111177</a>. 
-    PMID:41223457.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-    <strong class="title">Individualized Pancreatic Cancer Prevention: A Machine Learning Approach Integrating Polygenic Risk Scores for Absolute Risk Prediction in UK Biobank and Community Settings</strong>
-    <strong>Ke, T.M.</strong> et al. 
-    <em>International Journal of Radiation Oncology, Biology, Physics</em>. 
-    Volume 123, Issue 1, e659–e660.
-    <a href="https://doi.org/10.1016/j.ijrobp.2025.06.2990" class="doi" target="_blank">doi:10.1016/j.ijrobp.2025.06.2990</a>.
-      </p>
-    </div>
-    
-    <div class="card">
-      <p>
-        <strong class="title">Exploring the Relationships between Lifestyle Patterns and Epigenetic Biological Age Measures in Men</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R. <em>Biomedicines</em>. 2024 Sep 2;12(9):1985. 
-        <a href="https://doi.org/10.3390/biomedicines12091985" class="doi" target="_blank">doi:10.3390/biomedicines12091985</a>. PMID:39335499; PMCID:PMC11428654.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Strengthening the Evidence for a Causal Link between Type 2 Diabetes Mellitus and Pancreatic Cancer: Insights from Two-Sample and Multivariable Mendelian Randomization</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R. <em>Int J Mol Sci</em>. 2024 Apr 23;25(9):4615. 
-        <a href="https://doi.org/10.3390/ijms25094615" class="doi" target="_blank">doi:10.3390/ijms25094615</a>. PMID:38731833; PMCID:PMC11082974.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">An Integrative Pancreatic Cancer Risk Prediction Model in the UK Biobank</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R. <em>Biomedicines</em>. 2023 Dec 1;11(12):3206. 
-        <a href="https://doi.org/10.3390/biomedicines11123206" class="doi" target="_blank">doi:10.3390/biomedicines11123206</a>. PMID:38137427; PMCID:PMC10740416.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Risk Factors Associated with Pancreatic Cancer in the UK Biobank Cohort</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth R. <em>Cancers (Basel)</em>. 2022 Oct 12;14(20):4991. 
-        <a href="https://doi.org/10.3390/cancers14204991" class="doi" target="_blank">doi:10.3390/cancers14204991</a>. PMCID:PMC9599736.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Risk Factors of Pancreatic Cancer: A Literature Review</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Nieroda, Marzena; Kyriazis, Dimosthenis; Manias, George; Wajid, Usman; Tomson, Tanja; Muir, Kenneth R. <em>Cancer Reports and Reviews</em>. Sep 2022. 
-        <a href="https://doi.org/10.15761/CRR.1000241" class="doi" target="_blank">doi:10.15761/CRR.1000241</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Abstract 2236: A Novel Integrated Predictive Model for Pancreatic Cancer</strong>
-        <strong>Ke, Te-Min</strong>; Lophatananon, Artitaya; Muir, Kenneth; Yu, Xinzhu. <em>Cancer Research</em>. Jun 2022. 
-        <a href="https://doi.org/10.1158/1538-7445.AM2022-2236" class="doi" target="_blank">doi:10.1158/1538-7445.AM2022-2236</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Abstract 3654: Development and Application of the iHELP Platform to Facilitate the Establishment of Healthy Habits for the Prevention of Pancreatic Cancer</strong>
-        <strong>Ke, Te-Min</strong>; iHELP; Lophatananon, Artitaya; Nieroda, Marzena; Muir, Kenneth. <em>Cancer Research</em>. Jun 2022. 
-        <a href="https://doi.org/10.1158/1538-7445.AM2022-3654" class="doi" target="_blank">doi:10.1158/1538-7445.AM2022-3654</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Pre-CCRT Systemic Inflammation Index (SII) and Neutrophil-to-Lymphocyte Ratio (NLR) Are Better Than Platelet-to-Lymphocyte Ratio (PLR) as Predictors for pCR in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy (CCRT)</strong>
-        <strong>Ke, Te-Min</strong>; Huang, C.C.; Yang, C.C. <em>Int J Radiat Oncol Biol Phys</em>. 2020 Nov. 
-        <a href="https://doi.org/10.1016/j.ijrobp.2020.07.1899" class="doi" target="_blank">doi:10.1016/j.ijrobp.2020.07.1899</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">High Neutrophil-to-Lymphocyte Ratio and Platelet-to-Lymphocyte Ratio Predict Poor Survival in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy</strong>
-        <strong>Ke, Te-Min</strong>; Lin, Li-Ching; Huang, Chun-Che; Chien, Yu-Wun; Ting, Wei-Chen; Yang, Ching-Chieh. <em>Medicine (Baltimore)</em>. 2020 Apr;99(17):e19877. 
-        <a href="https://doi.org/10.1097/MD.0000000000019877" class="doi" target="_blank">doi:10.1097/MD.0000000000019877</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Neutrophil-to-Lymphocyte Ratio and Platelet-to-Lymphocyte Ratio Predict Poor Survival in Rectal Cancer Patients Receiving Neoadjuvant Concurrent Chemoradiotherapy</strong>
-        <strong>Ke, Te-Min</strong>; Yang, C.C. <em>Int J Radiat Oncol Biol Phys</em>. 2019 Sep. 
-        <a href="https://doi.org/10.1016/j.ijrobp.2019.06.2145" class="doi" target="_blank">doi:10.1016/j.ijrobp.2019.06.2145</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Pterostilbene Inhibits Lung Squamous Cell Carcinoma Growth Both In Vitro and In Vivo by Inducing S Phase Arrest and Apoptosis</strong>
-        Tan, Kok-Tong; Chen, Ping-Wen; Li, Shiming; <strong>Ke, Te-Min</strong>; Lin, Sheng-Hao; Yang, Ching-Chieh. <em>Oncology Letters</em>. 2019 Aug;18(2):1631–1640. 
-        <a href="https://doi.org/10.3892/ol.2019.10499" class="doi" target="_blank">doi:10.3892/ol.2019.10499</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">The Impact of Marital Status on Survival in Patients with Surgically Treated Colon Cancer</strong>
-        Yang, Ching-Chieh; Cheng, Li-Chin; Lin, Yu-Wei; Wang, Shih-Chang; <strong>Ke, Te-Min</strong>; Huang, Chung-I; Su, Yu-Chieh; Tai, Ming-Hong. <em>Medicine (Baltimore)</em>. 2019 Mar;98(11):e14856. 
-        <a href="https://doi.org/10.1097/MD.0000000000014856" class="doi" target="_blank">doi:10.1097/MD.0000000000014856</a>.
-      </p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong class="title">Evaluating the Optimal Radiation Dose for Definitive Chemoradiotherapy for Esophageal Squamous Cell Carcinoma: A Single Institution Experience</strong>
-        <strong>Ke, Te-Min</strong>; Fong, Yao; Lin, Li-Ching; Chien, Yu-Wun; Yang, Ching-Chieh; Lin, Chia-Hui; Lin, Kuei-Li; Que, Jenny. <em>Medicine (Baltimore)</em>. 2018 Nov;97(46):e13214. 
-        <a href="https://doi.org/10.1097/MD.0000000000013214" class="doi" target="_blank">doi:10.1097/MD.0000000000013214</a>.
-      </p>
-    </div>
-
-  </div>
-
+  <script src="assets/i18n.js"></script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
-
-
