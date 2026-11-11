@@ -80,19 +80,19 @@
       <div class="container">
         <p class="eyebrow" data-zh="臨床參考" data-en="Clinical">臨床參考</p>
         <h1 data-zh="加密工具" data-en="Encryption tool">加密工具</h1>
-        <p class="lead" data-zh="站長專用：更換三個加密檔的密碼，或把新的內容加密後放回網站。整個過程只在您的瀏覽器裡進行，資料不會上傳到任何地方。" data-en="For the site owner: change the password of the three encrypted files, or encrypt new content to put back on the site. Everything happens in your browser; nothing is uploaded anywhere.">站長專用：更換三個加密檔的密碼，或把新的內容加密後放回網站。整個過程只在您的瀏覽器裡進行，資料不會上傳到任何地方。</p>
+        <p class="lead" data-zh="站長專用：更換兩個加密檔的密碼，或把新的內容加密後放回網站。整個過程只在您的瀏覽器裡進行，資料不會上傳到任何地方。" data-en="For the site owner: change the password of the two encrypted files, or encrypt new content to put back on the site. Everything happens in your browser; nothing is uploaded anywhere.">站長專用：更換兩個加密檔的密碼，或把新的內容加密後放回網站。整個過程只在您的瀏覽器裡進行，資料不會上傳到任何地方。</p>
       </div>
     </section>
 
     <div class="container page-body">
       <section class="block">
         <h2 data-zh="一、更換密碼" data-en="1. Change the password">一、更換密碼</h2>
-        <p class="block-lead" data-zh="輸入目前的密碼與新密碼，工具會在瀏覽器裡解開目前網站上的三個加密檔、用新密碼重新加密並下載；把下載的檔案覆蓋 repo 裡的同名檔案即可。" data-en="Enter the current and the new password; the tool decrypts the three encrypted files currently on the site in your browser, re-encrypts them with the new password and downloads them. Replace the files of the same name in the repo.">輸入目前的密碼與新密碼，工具會在瀏覽器裡解開目前網站上的三個加密檔、用新密碼重新加密並下載；把下載的檔案覆蓋 repo 裡的同名檔案即可。</p>
+        <p class="block-lead" data-zh="輸入目前的密碼與新密碼，工具會在瀏覽器裡解開目前網站上的兩個加密檔、用新密碼重新加密並下載；把下載的檔案覆蓋 repo 裡的同名檔案即可。" data-en="Enter the current and the new password; the tool decrypts the two encrypted files currently on the site in your browser, re-encrypts them with the new password and downloads them. Replace the files of the same name in the repo.">輸入目前的密碼與新密碼，工具會在瀏覽器裡解開目前網站上的兩個加密檔、用新密碼重新加密並下載；把下載的檔案覆蓋 repo 裡的同名檔案即可。</p>
         <form class="card tool-form" id="rekey-form">
           <label class="lock-field"><span><span data-zh="目前的密碼" data-en="Current password">目前的密碼</span></span><input type="password" name="oldpw" required autocomplete="off"></label>
           <label class="lock-field"><span><span data-zh="新密碼（建議十個字以上、含英文字母）" data-en="New password (ten or more characters with letters is recommended)">新密碼（建議十個字以上、含英文字母）</span></span><input type="password" name="newpw" required autocomplete="off" minlength="6"></label>
           <label class="lock-field"><span><span data-zh="再輸入一次新密碼" data-en="Repeat the new password">再輸入一次新密碼</span></span><input type="password" name="newpw2" required autocomplete="off" minlength="6"></label>
-          <div class="lock-actions"><button type="submit" class="btn btn-primary"><span data-zh="重新加密並下載三個檔案" data-en="Re-encrypt and download all three files">重新加密並下載三個檔案</span></button></div>
+          <div class="lock-actions"><button type="submit" class="btn btn-primary"><span data-zh="重新加密並下載兩個檔案" data-en="Re-encrypt and download both files">重新加密並下載兩個檔案</span></button></div>
           <p class="lock-error" role="alert" hidden></p>
           <p class="st-hint" data-rekey-status></p>
         </form>
@@ -102,7 +102,7 @@
         <p class="block-lead" data-zh="更新分期資料或筆記時使用：貼上內容與密碼，產生加密檔並下載。" data-en="Use this when updating the staging data or notes: paste the content and the password to produce and download the encrypted file.">更新分期資料或筆記時使用：貼上內容與密碼，產生加密檔並下載。</p>
         <form class="card tool-form" id="enc-form">
           <label class="lock-field"><span><span data-zh="內容類型" data-en="Content type">內容類型</span></span>
-            <select name="kind"><option value="json">staging-data（JSON）</option><option value="html">staging-atlas（HTML）</option><option value="rt">radiotherapy content（JSON）</option></select></label>
+            <select name="kind"><option value="json">staging-data（JSON）</option><option value="html">staging-atlas（HTML）</option></select></label>
           <label class="lock-field"><span><span data-zh="內容（貼上 JSON 或整份 HTML）" data-en="Content (paste JSON or the whole HTML)">內容（貼上 JSON 或整份 HTML）</span></span><textarea name="content" required></textarea></label>
           <label class="lock-field"><span><span data-zh="密碼" data-en="Password">密碼</span></span><input type="password" name="pw" required autocomplete="off"></label>
           <div class="lock-actions"><button type="submit" class="btn btn-primary"><span data-zh="產生加密檔並下載" data-en="Encrypt and download">產生加密檔並下載</span></button></div>
@@ -110,7 +110,7 @@
         </form>
       </section>
       <div class="notice">
-        <p><span data-zh="下載的檔案請放回 repo 的對應位置：assets/staging-data.enc.json、clinical/staging-atlas.enc.json、radiotherapy/content.enc.json。三個檔案必須使用同一組密碼。" data-en="Put the downloads back in the repo at assets/staging-data.enc.json, clinical/staging-atlas.enc.json and radiotherapy/content.enc.json. All three must use the same password.">下載的檔案請放回 repo 的對應位置：assets/staging-data.enc.json、clinical/staging-atlas.enc.json、radiotherapy/content.enc.json。三個檔案必須使用同一組密碼。</span></p>
+        <p><span data-zh="下載的檔案請放回 repo 的對應位置：assets/staging-data.enc.json、clinical/staging-atlas.enc.json。兩個檔案必須使用同一組密碼。" data-en="Put the downloads back in the repo at assets/staging-data.enc.json and clinical/staging-atlas.enc.json. Both must use the same password.">下載的檔案請放回 repo 的對應位置：assets/staging-data.enc.json、clinical/staging-atlas.enc.json。兩個檔案必須使用同一組密碼。</span></p>
       </div>
     </div>
 

@@ -1,11 +1,10 @@
-/* encrypt-tool.js — 站長用：在瀏覽器內以密碼加密內容、或更換三個加密檔的密碼
+/* encrypt-tool.js — 站長用：在瀏覽器內以密碼加密內容、或更換兩個加密檔的密碼
    （PBKDF2-SHA256 300k + AES-256-GCM；需要 lock.js 提供 TMKLock.decrypt） */
 (function () {
   'use strict';
   var FILES = [
     { url: '../assets/staging-data.enc.json', name: 'staging-data.enc.json' },
-    { url: '../clinical/staging-atlas.enc.json', name: 'staging-atlas.enc.json' },
-    { url: '../radiotherapy/content.enc.json', name: 'content.enc.json' }
+    { url: '../clinical/staging-atlas.enc.json', name: 'staging-atlas.enc.json' }
   ];
   function b64(buf) { var bytes = new Uint8Array(buf), s = ''; for (var i = 0; i < bytes.length; i++) { s += String.fromCharCode(bytes[i]); } return btoa(s); }
   function encrypt(text, pw, type) {
@@ -35,13 +34,13 @@
       var kind = form.kind.value, content = form.content.value, pw = form.pw.value;
       var type = kind === 'html' ? 'html' : 'json';
       if (type === 'json') { try { content = JSON.stringify(JSON.parse(content)); } catch (ex) { err.textContent = msg('JSON 格式錯誤', 'Invalid JSON'); err.hidden = false; return; } }
-      var fname = kind === 'json' ? 'staging-data.enc.json' : (kind === 'rt' ? 'content.enc.json' : 'staging-atlas.enc.json');
+      var fname = kind === 'json' ? 'staging-data.enc.json' : 'staging-atlas.enc.json';
       encrypt(content, pw, type).then(function (payload) { download(payload, fname); })
         .catch(function () { err.textContent = msg('加密失敗', 'Encryption failed'); err.hidden = false; });
     });
   }
 
-  /* 一、更換密碼：解開現有三個檔案，再以新密碼加密 */
+  /* 一、更換密碼：解開現有兩個檔案，再以新密碼加密 */
   var rekey = document.getElementById('rekey-form');
   if (rekey && window.TMKLock) {
     var rerr = rekey.querySelector('.lock-error'); var status = rekey.querySelector('[data-rekey-status]'); var btn = rekey.querySelector('button');

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-zh="放射線腫瘤治療專區 – 柯德敏 Te-Min Ke" data-en="Radiation Oncology Treatment – Te-Min Ke">放射線腫瘤治療專區 – 柯德敏 Te-Min Ke</title>
-  <meta name="description" content="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。" data-zh="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。" data-en="Illustrated guides to techniques, equipment, consent and risks by site (password required for now)." data-i18n-attr="content">
+  <meta name="description" content="治療技術與設備、同意書與各部位風險的圖解說明。" data-zh="治療技術與設備、同意書與各部位風險的圖解說明。" data-en="Illustrated guides to techniques, equipment, consent and risks by site." data-i18n-attr="content">
   <meta name="author" content="柯德敏 Te-Min Ke">
   <meta name="theme-color" content="#fff6fa">
   <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta property="og:url" content="https://teminke.github.io/web/radiotherapy/index.html">
   <meta property="og:title" content="放射線腫瘤治療專區 – 柯德敏 Te-Min Ke | Radiation Oncology Treatment – Te-Min Ke">
-  <meta property="og:description" content="治療技術與設備、同意書與各部位風險的圖解說明（目前需要密碼）。">
+  <meta property="og:description" content="治療技術與設備、同意書與各部位風險的圖解說明。">
   <meta property="og:image" content="https://teminke.github.io/web/assets/images/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -80,7 +80,7 @@
       <div class="container">
         <p class="eyebrow" data-zh="放射線腫瘤治療專區" data-en="Radiation Oncology Treatment">放射線腫瘤治療專區</p>
         <h1 data-zh="放射線腫瘤治療專區" data-en="Radiation Oncology Treatment">放射線腫瘤治療專區</h1>
-        <p class="lead" data-zh="治療機器與技術、同意書與各部位風險的專篇圖解說明。內容已加密，輸入密碼後會在您的瀏覽器中解開。" data-en="Illustrated guides to the machines and techniques, the consent form and the risks by site. The content is encrypted and is decrypted in your browser after you enter the password.">治療機器與技術、同意書與各部位風險的專篇圖解說明。內容已加密，輸入密碼後會在您的瀏覽器中解開。</p>
+        <p class="lead" data-zh="治療機器與技術、同意書與各部位風險的專篇圖解說明。" data-en="Illustrated guides to the machines and techniques, the consent form and the risks by site.">治療機器與技術、同意書與各部位風險的專篇圖解說明。</p>
       </div>
     </section>
 
@@ -123,10 +123,9 @@
 
   <script src="../assets/i18n.js"></script>
   <script src="../assets/site.js"></script>
-  <script src="../assets/lock.js"></script>
   <script>
-    TMKLock.mount(document.getElementById("rt-lock"), "content.enc.json", function (text) {
-      var data = JSON.parse(text); var main = document.getElementById("main");
+    fetch("content.json").then(function (r) { if (!r.ok) { throw new Error("HTTP " + r.status); } return r.json(); }).then(function (data) {
+      var main = document.getElementById("main");
       function render() {
         var h = (window.location.hash || "").replace(/^#/, "");
         var m = /^a\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/.exec(h);
@@ -141,6 +140,8 @@
         } else { window.scrollTo(0, 0); }
       }
       window.addEventListener("hashchange", render); render();
+    }).catch(function () {
+      document.getElementById("rt-lock").innerHTML = '<p class="lock-error">內容載入失敗，請重新整理頁面。 / The content failed to load; please reload the page.</p>';
     });
   </script>
 </body>
