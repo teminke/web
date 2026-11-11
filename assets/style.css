@@ -345,14 +345,6 @@ html[data-lang="en"] .lang-toggle .lang-en { background: var(--purple); color: #
 .award-title { font-size: 1.08rem; margin: 0 0 0.2rem; }
 .award-sub { margin: 0; color: var(--muted); font-size: 0.95rem; }
 @media (max-width: 600px) { .award { grid-template-columns: 1fr; gap: 0.2rem; } }
-/* 分類：電腦上左右兩欄，窄螢幕上下排 / grouped: two columns on wide screens, stacked on narrow ones */
-.award-groups { display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
-.award-col { display: grid; gap: 1.6rem; align-content: start; min-width: 0; }
-.award-group-title { font-size: 1.2rem; font-weight: 800; color: var(--purple); margin: 0 0 0.8rem; padding-left: 0.7rem; border-left: 6px solid var(--pink); line-height: 1.4; }
-@media (min-width: 960px) {
-  .award-groups { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .award-groups .award { grid-template-columns: 82px 1fr; gap: 0.8rem; padding: 0.9rem 1.1rem; }
-}
 
 /* ---------- 連結卡片 / Link cards ---------- */
 .link-card a { word-break: break-all; }
